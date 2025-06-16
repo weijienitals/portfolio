@@ -313,7 +313,6 @@ p {
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-lg);
   overflow: hidden;
-  transition: all 0.3s ease-in-out;
   box-shadow: 0 4px 8px var(--color-shadow);
 }
 
@@ -608,13 +607,9 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 0.3s ease-in-out;
 }
 
-/* Subtle hover effect without scaling */
-.project-card:hover .project-image {
-  opacity: 0.95;
-}
+
 
 .project-image-overlay {
   position: absolute;
@@ -640,10 +635,7 @@ p {
   transition: opacity 0.3s ease-in-out;
 }
 
-/* Subtle hover effect without scaling */
-.professional-card:hover .upcoming-project-image {
-  opacity: 0.95;
-}
+
 
 .upcoming-project-image-overlay {
   position: absolute;
@@ -668,11 +660,6 @@ p {
   min-height: 500px;
 }
 
-/* Static hover effect - only changes colors and shadows, no movement */
-.carousel-project-card:hover {
-  box-shadow: 0 8px 16px var(--color-shadow-hover);
-  border-color: var(--color-accent);
-}
 
 /* Responsive carousel adjustments */
 @media (max-width: 768px) {
@@ -825,17 +812,12 @@ p {
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-lg);
   overflow: hidden;
-  transition: all 0.3s ease-in-out;
   box-shadow: 0 4px 8px var(--color-shadow);
   height: auto;
   min-height: 500px;
 }
 
-.carousel-project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 32px var(--color-shadow-hover);
-  border-color: var(--color-accent);
-}
+
 
 /* Touch support indicators */
 @media (pointer: coarse) {
@@ -850,7 +832,7 @@ p {
   }
 }
 
-/* Reduced motion support */
+/* Reduced motion support
 @media (prefers-reduced-motion: reduce) {
   .carousel-track {
     transition: none;
@@ -860,6 +842,22 @@ p {
   .carousel-indicator,
   .project-image,
   .upcoming-project-image {
+    transition: none;
+  }
+  
+  .carousel-indicator.active {
+    animation: none;
+  }
+} */
+
+/* Reduced motion support - important for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track {
+    transition: none;
+  }
+  
+  .carousel-nav-button,
+  .carousel-indicator {
     transition: none;
   }
   
