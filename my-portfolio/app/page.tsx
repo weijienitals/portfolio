@@ -204,39 +204,7 @@ const ContactSection = () => {
           </div>
         </div>
 
-        {/* Professional Summary */}
-        <div className="professional-card text-center mb-12">
-          <h3 className="text-xl font-semibold mb-4" style={{ color: 'var(--color-text-primary)' }}>Let's Work Together</h3>
-          <p className="mb-6 max-w-3xl mx-auto leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
-            I'm passionate about creating innovative solutions and always eager to take on new challenges. 
-            Whether it's a full-time opportunity, internship, or project collaboration, 
-            I'd love to discuss how we can work together to bring your ideas to life.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="mailto:Cheanweijie02@gmail.com?subject=Let's Work Together!&body=Hi Wei Jie, I'm interested in discussing opportunities with you."
-              className="btn-primary"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              Start a Conversation
-            </a>
-            <a 
-              href="http://www.linkedin.com/in/cheanweijie"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary"
-            >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clipRule="evenodd" />
-              </svg>
-              View LinkedIn Profile
-            </a>
-          </div>
-        </div>
-
+        
         {/* Availability Status */}
         <div className="professional-card text-center" style={{
           background: 'var(--color-surface)',

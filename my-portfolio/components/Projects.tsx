@@ -1,6 +1,11 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 
 export default function Projects() {
+  const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
+  const [currentUpcomingIndex, setCurrentUpcomingIndex] = useState(0);
+
   const projects = [
     {
       title: "VolunteerConnect",
@@ -25,7 +30,8 @@ export default function Projects() {
       status: "Completed",
       impact: "Connecting 500+ volunteers with local nonprofits",
       github: "#",
-      demo: "#"
+      demo: "#",
+      image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
     },
     {
       title: "Parade Card Game",
@@ -50,7 +56,8 @@ export default function Projects() {
       status: "In Progress",
       impact: "Demonstrating advanced Java programming skills",
       github: "#",
-      demo: "#"
+      demo: "#",
+      image: "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
     }
   ];
 
@@ -59,21 +66,48 @@ export default function Projects() {
       title: "AI-Powered Analytics Dashboard",
       description: "Business intelligence platform with machine learning insights",
       technologies: ["Python", "TensorFlow", "React", "FastAPI"],
-      status: "Planning Phase"
+      status: "Planning Phase",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
     },
     {
       title: "E-commerce Microservices Platform",
       description: "Scalable e-commerce solution with microservices architecture",
       technologies: ["Java", "Spring Boot", "Docker", "Kubernetes"],
-      status: "Architecture Design"
+      status: "Architecture Design",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
     },
     {
       title: "Real-time Collaboration Tool",
       description: "Team productivity platform with real-time features",
       technologies: ["Node.js", "Socket.io", "Vue.js", "MongoDB"],
-      status: "Research Phase"
+      status: "Research Phase",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
     }
   ];
+
+  const nextProject = () => {
+    setCurrentProjectIndex((prev) => 
+      prev === projects.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const prevProject = () => {
+    setCurrentProjectIndex((prev) => 
+      prev === 0 ? projects.length - 1 : prev - 1
+    );
+  };
+
+  const nextUpcoming = () => {
+    setCurrentUpcomingIndex((prev) => 
+      prev === upcomingProjects.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const prevUpcoming = () => {
+    setCurrentUpcomingIndex((prev) => 
+      prev === 0 ? upcomingProjects.length - 1 : prev - 1
+    );
+  };
 
   const ProjectCard = ({ project, index }: { project: any; index: number }) => {
     return (
@@ -95,14 +129,9 @@ export default function Projects() {
             </span>
           </div>
 
-          {/* Project Title and Period */}
-          <h3 className="project-title">{project.title}</h3>
-          <p className="project-period">{project.period}</p>
-
-          {/* Project Description */}
-          <p className="project-description">
-            {project.description}
-          </p>
+          <div className="project-title">{project.title}</div>
+          <div className="project-period">{project.period}</div>
+          <p className="project-description">{project.description}</p>
 
           {/* Technologies */}
           <div className="project-technologies">
@@ -114,40 +143,36 @@ export default function Projects() {
           </div>
 
           {/* Key Features */}
-          {project.features && (
-            <div className="mb-4">
-              <h4 className="text-sm font-semibold text-gray-700 mb-2">Key Features:</h4>
-              <ul className="text-sm text-gray-600 space-y-1">
-                {project.features.slice(0, 3).map((feature: string, i: number) => (
-                  <li key={i} className="flex items-start">
-                    <span className="text-blue-500 mr-2">•</span>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+          <div className="mb-6">
+            <h4 className="font-semibold text-gray-900 mb-3">Key Features</h4>
+            <ul className="space-y-2">
+              {project.features.slice(0, 3).map((feature: string, i: number) => (
+                <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+                  <span className="text-blue-500 mt-1">•</span>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </div>
 
           {/* Impact */}
-          {project.impact && (
-            <div className="mb-4">
-              <p className="text-sm text-gray-600">
-                <span className="font-semibold">Impact:</span> {project.impact}
-              </p>
-            </div>
-          )}
+          <div className="mb-6 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-400">
+            <p className="text-sm text-blue-800">
+              <span className="font-semibold">Impact:</span> {project.impact}
+            </p>
+          </div>
 
           {/* Actions */}
           <div className="project-actions">
             <a href={project.github} className="btn-secondary">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clipRule="evenodd" />
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
               </svg>
               View Code
             </a>
             <a href={project.demo} className="btn-primary">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
               </svg>
               Live Demo
             </a>
@@ -160,23 +185,116 @@ export default function Projects() {
   const UpcomingProjectCard = ({ project }: { project: any }) => {
     return (
       <div className="professional-card">
-        <h4 className="text-lg font-semibold text-gray-900 mb-2">{project.title}</h4>
-        <p className="text-gray-600 mb-3 text-sm">{project.description}</p>
-        
-        <div className="flex flex-wrap gap-2 mb-3">
-          {project.technologies.map((tech: string, i: number) => (
-            <span key={i} className="professional-tag">
-              {tech}
+        {/* Project Image */}
+        <div className="upcoming-project-image-container">
+          <img 
+            src={project.image} 
+            alt={project.title}
+            className="upcoming-project-image"
+            loading="lazy"
+          />
+          <div className="upcoming-project-image-overlay">
+            <span className="professional-tag in-progress">
+              {project.status}
             </span>
-          ))}
+          </div>
         </div>
         
-        <span className="professional-tag in-progress">
-          {project.status}
-        </span>
+        <div className="upcoming-project-content">
+          <h4 className="text-lg font-semibold text-gray-900 mb-2">{project.title}</h4>
+          <p className="text-gray-600 mb-3 text-sm">{project.description}</p>
+          
+          <div className="flex flex-wrap gap-2 mb-3">
+            {project.technologies.map((tech: string, i: number) => (
+              <span key={i} className="professional-tag">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     );
   };
+
+  const CarouselNavigation = ({ 
+    onPrev, 
+    onNext, 
+    currentIndex, 
+    totalItems,
+    setIndex
+  }: { 
+    onPrev: () => void; 
+    onNext: () => void; 
+    currentIndex: number; 
+    totalItems: number; 
+    setIndex: (index: number) => void;
+  }) => (
+    <>
+      {/* Left Navigation Button */}
+      <button
+        onClick={onPrev}
+        className="carousel-nav-button carousel-nav-left"
+        aria-label="Previous project"
+        disabled={currentIndex === 0}
+      >
+        <svg 
+          className="carousel-nav-icon" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      {/* Right Navigation Button */}
+      <button
+        onClick={onNext}
+        className="carousel-nav-button carousel-nav-right"
+        aria-label="Next project"
+        disabled={currentIndex === totalItems - 1}
+      >
+        <svg 
+          className="carousel-nav-icon" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </>
+  );
+
+  const CarouselIndicators = ({ 
+    currentIndex, 
+    totalItems, 
+    setIndex 
+  }: { 
+    currentIndex: number; 
+    totalItems: number; 
+    setIndex: (index: number) => void; 
+  }) => (
+    <div className="carousel-indicators-bottom">
+      {Array.from({ length: totalItems }).map((_, index) => (
+        <button
+          key={index}
+          onClick={() => setIndex(index)}
+          className={`carousel-indicator ${
+            index === currentIndex ? 'active' : ''
+          }`}
+          aria-label={`Go to slide ${index + 1}`}
+        />
+      ))}
+      <span className="carousel-counter">
+        {currentIndex + 1} of {totalItems}
+      </span>
+    </div>
+  );
 
   return (
     <section className="section-container bg-gray-50">
@@ -187,23 +305,38 @@ export default function Projects() {
         </p>
       </div>
       
-      {/* Main Projects */}
-      <div className="grid-2 mb-16">
-        {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} index={index} />
-        ))}
-      </div>
-
-      {/* Upcoming Projects */}
-      <div className="mb-8">
-        <h3 className="text-2xl font-semibold text-gray-900 mb-8 text-center">
-          Upcoming Projects
-        </h3>
-        <div className="grid-3">
-          {upcomingProjects.map((project, index) => (
-            <UpcomingProjectCard key={index} project={project} />
-          ))}
+      {/* Main Projects Carousel */}
+      <div className="max-w-4xl mx-auto mb-16">
+        <div className="carousel-container">
+          <div className="relative overflow-hidden">
+            <div 
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentProjectIndex * 100}%)` }}
+            >
+              {projects.map((project, index) => (
+                <div key={index} className="w-full flex-shrink-0 px-4">
+                  <ProjectCard project={project} index={index} />
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          {/* Side Navigation Buttons */}
+          <CarouselNavigation
+            onPrev={prevProject}
+            onNext={nextProject}
+            currentIndex={currentProjectIndex}
+            totalItems={projects.length}
+            setIndex={setCurrentProjectIndex}
+          />
         </div>
+        
+        {/* Bottom Indicators
+        <CarouselIndicators
+          currentIndex={currentProjectIndex}
+          totalItems={projects.length}
+          setIndex={setCurrentProjectIndex}
+        /> */}
       </div>
     </section>
   );

@@ -364,19 +364,7 @@ export default function Experience() {
         </div>
       </div>
 
-      {/* Availability Notice */}
-      <div className="professional-card text-center" style={{ 
-        background: 'linear-gradient(135deg, var(--color-accent), var(--color-secondary))',
-        color: 'white'
-      }}>
-        <h3 className="text-xl font-semibold mb-4">Internship Availability</h3>
-        <p className="mb-4" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
-          Available for internship opportunities during:
-        </p>
-        <div className="inline-block p-4 rounded" style={{ background: 'rgba(255, 255, 255, 0.2)' }}>
-          <p className="text-lg font-semibold">18 August 2025 – 30 December 2025</p>
-        </div>
-      </div>
+    
     </div>
   );
 
