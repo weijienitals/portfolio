@@ -64,7 +64,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Wei Jie Portfolio" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased dynamic-bg text-white`}
       >
         {children}
       </body>
