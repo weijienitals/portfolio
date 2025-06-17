@@ -6,75 +6,148 @@ export default function Skills() {
       title: "Programming Languages",
       icon: "💻",
       skills: [
-        { name: "Java", level: 90, description: "Spring Boot, Maven, OOP" },
-        { name: "JavaScript", level: 85, description: "ES6+, Node.js, DOM" },
-        { name: "Python", level: 80, description: "Data Analysis, Scripting" },
-        { name: "SQL", level: 85, description: "Database Design, Queries" },
-        { name: "HTML/CSS", level: 90, description: "Responsive Design" },
-        { name: "PHP", level: 70, description: "Web Development" },
+        { 
+          name: "Python", 
+          description: "Data Analysis, Scripting, AI/ML",
+          icon: "🐍",
+          color: "#3776ab"
+        },
+        { 
+          name: "JavaScript", 
+          description: "ES6+, Node.js, Frontend & Backend",
+          icon: "📜",
+          color: "#f7df1e"
+        },
+        { 
+          name: "Java", 
+          description: "Spring Boot, Maven, OOP",
+          icon: "☕",
+          color: "#ed8b00"
+        },
+        { 
+          name: "PHP", 
+          description: "Web Development, Server-side",
+          icon: "🐘",
+          color: "#777bb4"
+        },
       ]
     },
     {
-      title: "Frameworks & Libraries",
-      icon: "🔧",
+      title: "Web Development",
+      icon: "🌐",
       skills: [
-        { name: "Vue.js", level: 80, description: "Component-based UI" },
-        { name: "Spring Boot", level: 75, description: "REST APIs, Backend" },
-        { name: "React", level: 75, description: "Frontend Development" },
-        { name: "NumPy", level: 75, description: "Numerical Computing" },
-        { name: "Pandas", level: 80, description: "Data Manipulation" },
-        { name: "Matplotlib", level: 70, description: "Data Visualization" },
+        { 
+          name: "HTML", 
+          description: "Semantic Markup, Accessibility",
+          icon: "📄",
+          color: "#e34f26"
+        },
+        { 
+          name: "CSS", 
+          description: "Responsive Design, Modern Styling",
+          icon: "🎨",
+          color: "#1572b6"
+        },
+        { 
+          name: "Vue.js", 
+          description: "Component-based UI Development",
+          icon: "💚",
+          color: "#4fc08d"
+        },
+        { 
+          name: "React", 
+          description: "Frontend Development, SPA",
+          icon: "⚛️",
+          color: "#61dafb"
+        },
+      ]
+    },
+    {
+      title: "Data & Analytics",
+      icon: "📊",
+      skills: [
+        { 
+          name: "SQL", 
+          description: "Database Design, Complex Queries",
+          icon: "🗄️",
+          color: "#336791"
+        },
+        { 
+          name: "NumPy", 
+          description: "Numerical Computing, Scientific Computing",
+          icon: "🔢",
+          color: "#013243"
+        },
+        { 
+          name: "Pandas", 
+          description: "Data Manipulation, Analysis",
+          icon: "🐼",
+          color: "#150458"
+        },
+        { 
+          name: "Excel", 
+          description: "Advanced Analytics, Business Intelligence",
+          icon: "📈",
+          color: "#217346"
+        },
       ]
     },
     {
       title: "Tools & Platforms",
       icon: "🛠️",
       skills: [
-        { name: "Git", level: 85, description: "Version Control" },
-        { name: "Docker", level: 70, description: "Containerization" },
-        { name: "Firebase", level: 80, description: "Backend Services" },
-        { name: "Microsoft Azure", level: 65, description: "Cloud Platform" },
-        { name: "Figma", level: 75, description: "UI/UX Design" },
-        { name: "Microsoft Excel", level: 90, description: "Data Analysis" },
-      ]
-    },
-    {
-      title: "Specializations",
-      icon: "🎯",
-      skills: [
-        { name: "Web Scraping", level: 85, description: "Data Extraction" },
-        { name: "REST APIs", level: 80, description: "Service Development" },
-        { name: "Database Design", level: 75, description: "System Architecture" },
-        { name: "Business Analytics", level: 80, description: "Data Insights" },
-        { name: "AI Applications", level: 70, description: "Machine Learning" },
-        { name: "Project Management", level: 85, description: "Team Leadership" },
+        { 
+          name: "Docker", 
+          description: "Containerization, DevOps",
+          icon: "🐳",
+          color: "#2496ed"
+        },
+        { 
+          name: "Git", 
+          description: "Version Control, Collaboration",
+          icon: "📝",
+          color: "#f05032"
+        },
+        { 
+          name: "Firebase", 
+          description: "Backend Services, Real-time Database",
+          icon: "🔥",
+          color: "#ffca28"
+        },
+        { 
+          name: "Azure", 
+          description: "Cloud Platform, Services",
+          icon: "☁️",
+          color: "#0078d4"
+        },
       ]
     }
   ];
 
   const SkillCard = ({ category }: { category: any }) => {
     return (
-      <div className="skill-category">
-        <div className="skill-category-header">
-          <span className="skill-category-icon">{category.icon}</span>
-          <h3 className="skill-category-title">{category.title}</h3>
+      <div className="skill-category-new">
+        <div className="skill-category-header-new">
+          <div className="category-icon-container">
+            <span className="category-main-icon">{category.icon}</span>
+          </div>
+          <h3 className="category-heading">{category.title}</h3>
         </div>
         
-        <div className="space-y-4">
+        <div className="skills-list">
           {category.skills.map((skill: any, index: number) => (
-            <div key={index} className="skill-item">
-              <div className="skill-info">
-                <h4>{skill.name}</h4>
-                <p>{skill.description}</p>
-                <div className="progress-container mt-2">
-                  <div 
-                    className="progress-bar"
-                    style={{ width: `${skill.level}%` }}
-                  ></div>
-                </div>
+            <div key={index} className="skill-item-new">
+              <div 
+                className="skill-icon-container" 
+                style={{ backgroundColor: `${skill.color}15` }}
+              >
+                <span className="skill-tech-icon" style={{ color: skill.color }}>
+                  {skill.icon}
+                </span>
               </div>
-              <div className="skill-level">
-                <div className="skill-percentage">{skill.level}%</div>
+              <div className="skill-details">
+                <h4 className="skill-title">{skill.name}</h4>
+                <p className="skill-desc">{skill.description}</p>
               </div>
             </div>
           ))}
@@ -86,13 +159,13 @@ export default function Skills() {
   return (
     <section className="section-container bg-white">
       <div className="section-header">
-        <h2 className="section-title">Technical Skills</h2>
+        <h2 className="section-title">Skills</h2>
         <p className="section-subtitle">
-          A comprehensive overview of my technical competencies and expertise across various domains
+          Technologies and tools I use to build innovative solutions and bring ideas to life
         </p>
       </div>
       
-      <div className="grid-2">
+      <div className="skills-grid-container">
         {skillCategories.map((category, index) => (
           <SkillCard key={index} category={category} />
         ))}
