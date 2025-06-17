@@ -1159,3 +1159,183 @@ p {
     color: #cbd5e0;
   }
 }
+
+
+
+
+
+/* Updated Skills Section Styles - Add these to your globals.css */
+
+/* Skill item styling without descriptions */
+.skill-item-new {
+  display: flex;
+  align-items: center; /* Changed from flex-start to center since no description */
+  gap: var(--spacing-sm, 0.75rem);
+  padding: var(--spacing-md, 1rem); /* Increased padding for better spacing */
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  background: #fafafa;
+  border: 1px solid var(--color-border-light, #f0f0f0);
+  min-height: 60px; /* Reduced from 80px since no description */
+}
+
+.skill-item-new:hover {
+  background: var(--color-surface, #f8fafc);
+  transform: translateX(4px);
+  border-color: var(--color-border, #e2e8f0);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Updated icon container for images */
+.skill-icon-container {
+  width: 40px; /* Increased from 36px for better image visibility */
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  padding: 6px; /* Add padding for images */
+}
+
+/* Image styling for technology icons */
+.skill-tech-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transition: all 0.2s ease;
+  border-radius: 2px; /* Slight rounding for softer look */
+}
+
+.skill-item-new:hover .skill-tech-icon {
+  transform: scale(1.15); /* Slightly more prominent hover effect */
+  filter: brightness(1.1);
+}
+
+/* Ensure skill details don't have description spacing */
+.skill-details {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center; /* Center align the title */
+}
+
+/* Updated skill title for centered layout */
+.skill-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-primary, #2d3748);
+  margin: 0; /* Remove bottom margin since no description */
+  line-height: 1.3;
+}
+
+/* Remove skill description styles since we're not using them */
+.skill-desc {
+  display: none;
+}
+
+/* Enhanced hover effects for better interactivity */
+.skill-item-new:hover .skill-icon-container {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.15);
+}
+
+/* Improved responsive design for mobile */
+@media (max-width: 768px) {
+  .skill-item-new {
+    padding: var(--spacing-sm, 0.75rem);
+    gap: var(--spacing-xs, 0.5rem);
+    min-height: 50px;
+  }
+
+  .skill-icon-container {
+    width: 36px;
+    height: 36px;
+    padding: 4px;
+  }
+
+  .skill-tech-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .skill-title {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-icon-container {
+    width: 32px;
+    height: 32px;
+    padding: 3px;
+  }
+
+  .skill-tech-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .skill-title {
+    font-size: 0.85rem;
+  }
+}
+
+/* Additional professional styling enhancements */
+.skill-category-new:hover .skill-item-new {
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+/* Loading state for images */
+.skill-tech-icon:not([src]) {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Error state styling for fallback icons */
+.skill-tech-icon[src*="devicon-original"] {
+  filter: grayscale(0.3) opacity(0.8);
+}
+
+/* Smooth color transitions for icon containers */
+.skill-icon-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-icon-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: currentColor;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  border-radius: inherit;
+}
+
+.skill-item-new:hover .skill-icon-container::before {
+  opacity: 0.05;
+}
+
+
+
+.skill-category-new:hover {
+  /* Remove the lifting effect and enhanced shadow */
+  transform: none;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-color: var(--color-border, #e2e8f0);
+}

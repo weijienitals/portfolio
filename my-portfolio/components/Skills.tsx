@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 
 export default function Skills() {
@@ -8,26 +10,22 @@ export default function Skills() {
       skills: [
         { 
           name: "Python", 
-          description: "Data Analysis, Scripting, AI/ML",
-          icon: "🐍",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
           color: "#3776ab"
         },
         { 
           name: "JavaScript", 
-          description: "ES6+, Node.js, Frontend & Backend",
-          icon: "📜",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
           color: "#f7df1e"
         },
         { 
           name: "Java", 
-          description: "Spring Boot, Maven, OOP",
-          icon: "☕",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
           color: "#ed8b00"
         },
         { 
           name: "PHP", 
-          description: "Web Development, Server-side",
-          icon: "🐘",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
           color: "#777bb4"
         },
       ]
@@ -38,26 +36,22 @@ export default function Skills() {
       skills: [
         { 
           name: "HTML", 
-          description: "Semantic Markup, Accessibility",
-          icon: "📄",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
           color: "#e34f26"
         },
         { 
           name: "CSS", 
-          description: "Responsive Design, Modern Styling",
-          icon: "🎨",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
           color: "#1572b6"
         },
         { 
           name: "Vue.js", 
-          description: "Component-based UI Development",
-          icon: "💚",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
           color: "#4fc08d"
         },
         { 
           name: "React", 
-          description: "Frontend Development, SPA",
-          icon: "⚛️",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
           color: "#61dafb"
         },
       ]
@@ -68,26 +62,22 @@ export default function Skills() {
       skills: [
         { 
           name: "SQL", 
-          description: "Database Design, Complex Queries",
-          icon: "🗄️",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
           color: "#336791"
         },
         { 
           name: "NumPy", 
-          description: "Numerical Computing, Scientific Computing",
-          icon: "🔢",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg",
           color: "#013243"
         },
         { 
           name: "Pandas", 
-          description: "Data Manipulation, Analysis",
-          icon: "🐼",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg",
           color: "#150458"
         },
         { 
           name: "Excel", 
-          description: "Advanced Analytics, Business Intelligence",
-          icon: "📈",
+          icon: "https://img.icons8.com/color/48/microsoft-excel-2019.png",
           color: "#217346"
         },
       ]
@@ -98,26 +88,22 @@ export default function Skills() {
       skills: [
         { 
           name: "Docker", 
-          description: "Containerization, DevOps",
-          icon: "🐳",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
           color: "#2496ed"
         },
         { 
           name: "Git", 
-          description: "Version Control, Collaboration",
-          icon: "📝",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
           color: "#f05032"
         },
         { 
           name: "Firebase", 
-          description: "Backend Services, Real-time Database",
-          icon: "🔥",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
           color: "#ffca28"
         },
         { 
           name: "Azure", 
-          description: "Cloud Platform, Services",
-          icon: "☁️",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
           color: "#0078d4"
         },
       ]
@@ -141,13 +127,18 @@ export default function Skills() {
                 className="skill-icon-container" 
                 style={{ backgroundColor: `${skill.color}15` }}
               >
-                <span className="skill-tech-icon" style={{ color: skill.color }}>
-                  {skill.icon}
-                </span>
+                <img 
+                  src={skill.icon} 
+                  alt={`${skill.name} icon`}
+                  className="skill-tech-icon"
+                  onError={(e) => {
+                    // Fallback to a generic programming icon if image fails to load
+                    e.currentTarget.src = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/devicon/devicon-original.svg";
+                  }}
+                />
               </div>
               <div className="skill-details">
                 <h4 className="skill-title">{skill.name}</h4>
-                <p className="skill-desc">{skill.description}</p>
               </div>
             </div>
           ))}
