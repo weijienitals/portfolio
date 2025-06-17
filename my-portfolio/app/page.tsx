@@ -57,21 +57,7 @@ const HeroSection = () => {
           </a>
         </div>
 
-        {/* Professional Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-          <div className="text-center">
-            <div className="text-3xl font-bold text-gray-900 mb-2">2+</div>
-            <div className="text-gray-600">Years at SMU</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-gray-900 mb-2">5+</div>
-            <div className="text-gray-600">Projects Completed</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-gray-900 mb-2">3</div>
-            <div className="text-gray-600">Leadership Roles</div>
-          </div>
-        </div>
+        
       </div>
     </section>
   );
