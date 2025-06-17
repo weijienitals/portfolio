@@ -1339,3 +1339,299 @@ p {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   border-color: var(--color-border, #e2e8f0);
 }
+
+
+
+/* Tag Cloud Skills Section Styles - Add to your globals.css */
+
+/* Filter Buttons Container */
+.skills-filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm, 0.75rem);
+  justify-content: center;
+  margin-bottom: var(--spacing-xl, 2rem);
+  padding: var(--spacing-md, 1rem);
+  background: var(--color-surface, #f8fafc);
+  border-radius: var(--border-radius-lg, 16px);
+  border: 1px solid var(--color-border-light, #f0f0f0);
+}
+
+/* Filter Button Styling */
+.skills-filter-button {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs, 0.5rem);
+  padding: var(--spacing-sm, 0.75rem) var(--spacing-md, 1rem);
+  border-radius: var(--border-radius-md, 12px);
+  border: 1px solid var(--color-border-light, #f0f0f0);
+  background: var(--color-background, #ffffff);
+  color: var(--color-text-secondary, #718096);
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-filter-button:hover {
+  background: var(--color-surface, #f8fafc);
+  border-color: var(--color-border, #e2e8f0);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Active Filter Button */
+.skills-filter-active {
+  background: linear-gradient(135deg, var(--color-accent, #3b82f6) 0%, var(--color-secondary, #8b5cf6) 100%) !important;
+  color: white !important;
+  border-color: var(--color-accent, #3b82f6) !important;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
+  transform: translateY(-2px) !important;
+}
+
+.skills-filter-active:hover {
+  background: linear-gradient(135deg, var(--color-accent, #3b82f6) 0%, var(--color-secondary, #8b5cf6) 100%) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Filter Button Elements */
+.skills-filter-icon {
+  font-size: 1.1rem;
+  filter: brightness(0.9);
+}
+
+.skills-filter-count {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+.skills-filter-active .skills-filter-count {
+  opacity: 0.9;
+}
+
+/* Skills Cloud Container */
+.skills-cloud-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm, 0.75rem);
+  justify-content: center;
+  margin-bottom: var(--spacing-xl, 2rem);
+  padding: var(--spacing-lg, 1.5rem);
+  background: var(--color-background, #ffffff);
+  border-radius: var(--border-radius-lg, 16px);
+  border: 1px solid var(--color-border-light, #f0f0f0);
+  min-height: 200px;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+/* Individual Skill Tag */
+.skill-tag-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs, 0.5rem);
+  padding: var(--spacing-sm, 0.75rem) var(--spacing-md, 1rem);
+  background: var(--color-background, #ffffff);
+  border: 1px solid var(--color-border-light, #f0f0f0);
+  border-radius: var(--border-radius-md, 12px);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  position: relative;
+  animation: skillFadeIn 0.3s ease-out forwards;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+@keyframes skillFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skill-tag-item:hover {
+  background: var(--color-surface, #f8fafc);
+  border-color: var(--color-border, #e2e8f0);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Skill Tag Icon Container */
+.skill-tag-icon-container {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 4px;
+  transition: all 0.2s ease;
+}
+
+.skill-tag-item:hover .skill-tag-icon-container {
+  transform: scale(1.05);
+}
+
+/* Skill Tag Icon */
+.skill-tag-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  transition: all 0.2s ease;
+}
+
+.skill-tag-item:hover .skill-tag-icon {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
+/* Skill Tag Name */
+.skill-tag-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-text-primary, #2d3748);
+  white-space: nowrap;
+}
+
+/* Skills Summary Section */
+.skills-summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg, 1.5rem);
+  padding: var(--spacing-lg, 1.5rem);
+  background: var(--color-surface, #f8fafc);
+  border-radius: var(--border-radius-lg, 16px);
+  border: 1px solid var(--color-border-light, #f0f0f0);
+}
+
+/* Skills Summary Stats */
+.skills-summary-stats {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-xl, 2rem);
+  flex-wrap: wrap;
+}
+
+.skills-summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs, 0.5rem);
+}
+
+.skills-summary-number {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--color-accent, #3b82f6) 0%, var(--color-secondary, #8b5cf6) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.skills-summary-label {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary, #718096);
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skills-filter-container {
+    gap: var(--spacing-xs, 0.5rem);
+    padding: var(--spacing-sm, 0.75rem);
+  }
+  
+  .skills-filter-button {
+    padding: var(--spacing-xs, 0.5rem) var(--spacing-sm, 0.75rem);
+    font-size: 0.85rem;
+  }
+  
+  .skills-cloud-container {
+    gap: var(--spacing-xs, 0.5rem);
+    padding: var(--spacing-md, 1rem);
+  }
+  
+  .skill-tag-item {
+    padding: var(--spacing-xs, 0.5rem) var(--spacing-sm, 0.75rem);
+  }
+  
+  .skill-tag-icon-container {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .skill-tag-icon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .skill-tag-name {
+    font-size: 0.85rem;
+  }
+  
+  .skills-summary-stats {
+    gap: var(--spacing-md, 1rem);
+  }
+  
+  .skills-summary-number {
+    font-size: 1.5rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .skills-filter-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .skills-filter-button {
+    justify-content: center;
+  }
+  
+  .skills-cloud-container {
+    justify-content: flex-start;
+  }
+}
+
+/* Loading and Error States */
+.skill-tag-icon:not([src]) {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Accessibility Improvements */
+.skills-filter-button:focus-visible,
+.skill-tag-item:focus-visible {
+  outline: 2px solid var(--color-accent, #3b82f6);
+  outline-offset: 2px;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .skill-tag-item {
+    animation: none;
+  }
+  
+  .skill-tag-item:hover {
+    transform: none;
+  }
+  
+  .skills-filter-button:hover {
+    transform: none;
+  }
+}
