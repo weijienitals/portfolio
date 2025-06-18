@@ -13,25 +13,6 @@ export default function Experience() {
 
   const workExperiences = [
     {
-      title: "Research Intern",
-      company: "SMART - Singapore - MIT Alliance for Research and Technology",
-      period: "Feb 2025 – Present",
-      type: "Research",
-      description: "IRG M3S T7: Human workers and resource allocation optimization. Research on Ridesharing Data Analytics and Optimization.",
-      responsibilities: [
-        "Research on Ridesharing Data Analytics and Optimization",
-        "Analyze human worker behavior and resource allocation patterns",
-        "Develop optimization algorithms for transportation systems",
-        "Collaborate with MIT researchers on cutting-edge mobility solutions"
-      ],
-      technologies: ["Python", "Data Analytics", "Optimization Algorithms", "Research Methods"],
-      achievements: [
-        "Contributing to innovative mobility research with international impact",
-        "Working with MIT Alliance on advanced transportation solutions",
-        "Developing expertise in data-driven optimization techniques"
-      ]
-    },
-    {
       title: "Fullstack Engineer",
       company: "LedgerNow",
       period: "May 2025 – Aug 2025",
