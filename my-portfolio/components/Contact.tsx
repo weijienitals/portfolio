@@ -1,122 +1,174 @@
-export default function Contact() {
-    const contactInfo = {
-      email: 'Cheanweijie02@gmail.com',
-      phone: '+65 8358 2090',
-      linkedin: 'http://www.linkedin.com/in/cheanweijie',
-      location: 'Singapore'
-    };
-  
-    return (
-      <section id="contact" className="section-padding text-white">
-        <div className="container-max">
-          
-          {/* Section Header with Rainbow Text */}
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 rainbow-text">
-              Let's Connect
-            </h2>
-            <div className="flex justify-center">
-              <div className="h-1 w-32 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 rounded-full"></div>
+// Contact Section Component
+const ContactSection = () => {
+  return (
+    <section id="contact" className="section-container bg-white">
+      <div className="section-header">
+        <h2 className="section-title">Get In Touch</h2>
+        <p className="section-subtitle">
+          Ready to collaborate or discuss opportunities? I'd love to hear from
+          you.
+        </p>
+      </div>
+
+      <div className="max-w-6xl mx-auto">
+        {/* Contact Methods */}
+        <div className="grid-3 mb-12">
+          {/* Email Card */}
+          <div className="professional-card text-center">
+            <div
+              className="w-16 h-16 rounded-xl mx-auto mb-4 flex items-center justify-center"
+              style={{
+                background: "var(--color-accent)",
+                color: "white",
+              }}
+            >
+              <svg
+                className="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
             </div>
-            <p className="text-xl text-gray-200 mt-8 max-w-2xl mx-auto">
-              Ready to create something amazing together? Let's discuss how we can bring your ideas to life!
+            <h3
+              className="font-semibold mb-2"
+              style={{ color: "var(--color-text-primary)" }}
+            >
+              Email
+            </h3>
+            <p
+              className="text-sm mb-3"
+              style={{ color: "var(--color-text-secondary)" }}
+            >
+              Cheanweijie02@gmail.com
             </p>
-          </div>
-  
-          {/* Contact Cards */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            
-            {/* Email Card */}
-            <a 
-              href={`mailto:${contactInfo.email}`} 
-              className="vibrant-card p-8 rounded-3xl block hover:neon-blue transition-all group"
+            <a
+              href="mailto:Cheanweijie02@gmail.com?subject=Let's Connect&body=Hi Wei Jie, I'm interested in discussing opportunities with you."
+              className="btn-primary text-sm"
             >
-              <div className="text-center">
-                <div className="glass w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <span className="text-4xl">📧</span>
-                </div>
-                <h3 className="text-2xl font-bold text-cyan-300 mb-4">Email Me</h3>
-                <p className="text-gray-300 break-all">{contactInfo.email}</p>
-                <p className="text-gray-400 text-sm mt-2">Click to send an email</p>
-              </div>
+              Send Email
             </a>
-  
-            {/* LinkedIn Card */}
-            <a 
-              href={contactInfo.linkedin} 
-              target="_blank" 
+          </div>
+
+          {/* LinkedIn Card */}
+          <div className="professional-card text-center">
+            <div
+              className="w-16 h-16 rounded-xl mx-auto mb-4 flex items-center justify-center"
+              style={{
+                background: "var(--color-secondary)",
+                color: "white",
+              }}
+            >
+              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fillRule="evenodd"
+                  d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </div>
+            <h3
+              className="font-semibold mb-2"
+              style={{ color: "var(--color-text-primary)" }}
+            >
+              LinkedIn
+            </h3>
+            <p
+              className="text-sm mb-3"
+              style={{ color: "var(--color-text-secondary)" }}
+            >
+              Professional Network
+            </p>
+            <a
+              href="http://www.linkedin.com/in/cheanweijie"
+              target="_blank"
               rel="noopener noreferrer"
-              className="vibrant-card p-8 rounded-3xl block hover:neon-purple transition-all group"
+              className="btn-secondary text-sm"
             >
-              <div className="text-center">
-                <div className="glass w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <span className="text-4xl">💼</span>
-                </div>
-                <h3 className="text-2xl font-bold text-purple-300 mb-4">LinkedIn</h3>
-                <p className="text-gray-300">Connect professionally</p>
-                <p className="text-gray-400 text-sm mt-2">View my professional profile</p>
-              </div>
+              Connect
             </a>
-  
-            {/* Phone Card */}
-            <div className="vibrant-card p-8 rounded-3xl hover:neon-pink transition-all group">
-              <div className="text-center">
-                <div className="glass w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  <span className="text-4xl">📱</span>
-                </div>
-                <h3 className="text-2xl font-bold text-pink-300 mb-4">Call Me</h3>
-                <p className="text-gray-300">{contactInfo.phone}</p>
-                <p className="text-gray-400 text-sm mt-2">Available in Singapore</p>
-              </div>
-            </div>
           </div>
-  
-          {/* Call to Action */}
-          <div className="text-center">
-            <div className="vibrant-card p-12 rounded-3xl max-w-4xl mx-auto">
-              <h3 className="text-4xl font-bold mb-6 rainbow-text">Ready to Work Together?</h3>
-              <p className="text-gray-200 text-lg mb-8 max-w-3xl mx-auto leading-relaxed">
-                I'm passionate about creating innovative solutions and always eager to take on new challenges. 
-                Whether it's a full-time opportunity, freelance project, or just a conversation about technology, 
-                let's discuss how we can work together to bring your ideas to life!
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                
-                {/* Enhanced Email Button */}
-                <div className="animated-border hover:scale-105 transition-transform">
-                  <a 
-                    href={`mailto:${contactInfo.email}?subject=Let's Work Together!&body=Hi Wei Jie, I'm interested in discussing opportunities with you.`}
-                    className="animated-border-inner text-gray-800 font-semibold text-lg block px-8 py-4"
-                  >
-                    Send Email
-                  </a>
-                </div>
-                
-                {/* Neon LinkedIn Button */}
-                <a 
-                  href={contactInfo.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gradient-to-r from-blue-500 to-purple-500 px-8 py-4 rounded-full font-semibold hover:from-blue-600 hover:to-purple-600 transition-all text-lg neon-blue hover:scale-105"
-                >
-                  Connect on LinkedIn
-                </a>
-              </div>
+
+          {/* Phone Card */}
+          <div className="professional-card text-center">
+            <div
+              className="w-16 h-16 rounded-xl mx-auto mb-4 flex items-center justify-center"
+              style={{
+                background: "var(--color-primary)",
+                color: "white",
+              }}
+            >
+              <svg
+                className="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                />
+              </svg>
             </div>
-          </div>
-  
-          {/* Fun Availability Status */}
-          <div className="text-center mt-16">
-            <div className="glass p-6 rounded-2xl max-w-md mx-auto">
-              <div className="flex items-center justify-center space-x-3">
-                <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                <span className="text-green-300 font-semibold">Available for Internships</span>
-              </div>
-              <p className="text-gray-300 text-sm mt-2">August - December 2025</p>
-            </div>
+            <h3
+              className="font-semibold mb-2"
+              style={{ color: "var(--color-text-primary)" }}
+            >
+              Phone
+            </h3>
+            <p
+              className="text-sm mb-3"
+              style={{ color: "var(--color-text-secondary)" }}
+            >
+              +65 8358 2090
+            </p>
+            <p className="text-xs mb-3" style={{ color: "var(--color-text-muted)" }}>
+              Available in Singapore
+            </p>
+            <a href="tel:+6583582090" className="btn-tertiary text-sm">
+              Call Now
+            </a>
           </div>
         </div>
-      </section>
-    );
-  }
+
+        {/* Availability Status */}
+        <div
+          className="professional-card text-center"
+          style={{
+            background: "var(--color-surface)",
+            border: "2px solid var(--color-accent)",
+          }}
+        >
+          <div className="flex items-center justify-center gap-3 mb-2">
+            <div
+              className="w-3 h-3 rounded-full"
+              style={{ background: "#27ae60" }}
+            ></div>
+            <h4
+              className="font-semibold"
+              style={{ color: "var(--color-text-primary)" }}
+            >
+              Available for Internships
+            </h4>
+          </div>
+          <p
+            className="text-sm"
+            style={{ color: "var(--color-text-secondary)" }}
+          >
+            18 August 2025 – 30 December 2025
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ContactSection;
