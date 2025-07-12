@@ -1,14 +1,43 @@
 // components/HeroSection.tsx
-import React from "react";
+'use client';
+
+import React, { useState, useEffect } from "react";
 
 export default function HeroSection() {
+  const [displayedText, setDisplayedText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const fullName = "Chean Wei Jie";
+
+  useEffect(() => {
+    const typeSpeed = isDeleting ? 100 : 150;
+    const pauseTime = isDeleting ? 500 : 2000;
+
+    const timer = setTimeout(() => {
+      if (!isDeleting && currentIndex < fullName.length) {
+        setDisplayedText(fullName.slice(0, currentIndex + 1));
+        setCurrentIndex(currentIndex + 1);
+      } else if (isDeleting && currentIndex > 0) {
+        setDisplayedText(fullName.slice(0, currentIndex - 1));
+        setCurrentIndex(currentIndex - 1);
+      } else if (!isDeleting && currentIndex === fullName.length) {
+        setTimeout(() => setIsDeleting(true), pauseTime);
+      } else if (isDeleting && currentIndex === 0) {
+        setIsDeleting(false);
+      }
+    }, typeSpeed);
+
+    return () => clearTimeout(timer);
+  }, [currentIndex, isDeleting, fullName]);
+
   return (
     <section className="section-container bg-white min-h-screen flex items-center">
       <div className="text-center max-w-4xl mx-auto">
         <div className="mb-8">
           <p className="text-xl text-gray-600 mb-4">Hello, I'm</p>
-          <h1 className="text-6xl md:text-7xl font-bold text-gray-900 mb-4">
-            Chean Wei Jie
+          <h1 className="text-6xl md:text-7xl font-bold text-gray-900 mb-4 min-h-[1.2em]">
+            {displayedText}
+            <span className="animate-pulse text-blue-600">|</span>
           </h1>
           <h2 className="text-2xl md:text-3xl font-semibold text-blue-600 mb-6">
             Fullstack Developer & Data Analytics Enthusiast

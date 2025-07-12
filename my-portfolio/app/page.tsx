@@ -4,11 +4,9 @@ import FeaturedProjects from "@/components/FeaturedProjects";
 import Experience from "@/components/Experience";
 import HeroSection from "@/components/hero";
 import AboutSection from "@/components/About";
-import ContactSection from "@/components/Contact" ;
+import ContactSection from "@/components/Contact";
 import Navigation from "@/components/Navigation";
-
-
-
+import Footer from "@/components/Footer";
 
 // Main Portfolio Page Component
 export default function PortfolioPage() {
@@ -23,7 +21,6 @@ export default function PortfolioPage() {
         <div id="skills">
           <Skills />
         </div>
-
         <div id="projects">
           <FeaturedProjects />
         </div>
@@ -32,18 +29,9 @@ export default function PortfolioPage() {
         </div>
         <ContactSection />
       </main>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <p className="text-gray-400">
-              © 2025 Chean Wei Jie. Built with passion and modern web
-              technologies.
-            </p>
-          </div>
-        </div>
-      </footer>
+      
+      {/* New Professional Footer */}
+      <Footer />
     </div>
   );
 }
