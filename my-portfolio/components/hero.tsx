@@ -1,54 +1,114 @@
-// components/HeroSection.tsx
-'use client';
-
-import React, { useState, useEffect } from "react";
+// components/hero.tsx - Typewriter + Fade Combination (Recommended)
+"use client";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function HeroSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
   const [displayedText, setDisplayedText] = useState("");
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
+  const [isTypingComplete, setIsTypingComplete] = useState(false);
+  
   const fullName = "Chean Wei Jie";
 
+  // Typewriter effect for name
   useEffect(() => {
-    const typeSpeed = isDeleting ? 100 : 150;
-    const pauseTime = isDeleting ? 500 : 2000;
+    if (isVisible && !isTypingComplete) {
+      let currentIndex = 0;
+      const typingInterval = setInterval(() => {
+        if (currentIndex <= fullName.length) {
+          setDisplayedText(fullName.slice(0, currentIndex));
+          currentIndex++;
+        } else {
+          setIsTypingComplete(true);
+          clearInterval(typingInterval);
+        }
+      }, 100); // Adjust speed here (100ms per character)
 
-    const timer = setTimeout(() => {
-      if (!isDeleting && currentIndex < fullName.length) {
-        setDisplayedText(fullName.slice(0, currentIndex + 1));
-        setCurrentIndex(currentIndex + 1);
-      } else if (isDeleting && currentIndex > 0) {
-        setDisplayedText(fullName.slice(0, currentIndex - 1));
-        setCurrentIndex(currentIndex - 1);
-      } else if (!isDeleting && currentIndex === fullName.length) {
-        setTimeout(() => setIsDeleting(true), pauseTime);
-      } else if (isDeleting && currentIndex === 0) {
-        setIsDeleting(false);
+      return () => clearInterval(typingInterval);
+    } else if (!isVisible) {
+      // Reset typewriter when section leaves viewport
+      setDisplayedText("");
+      setIsTypingComplete(false);
+    }
+  }, [isVisible, isTypingComplete]);
+
+  // Intersection Observer for fade effects
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          } else {
+            setIsVisible(false);
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: "0px 0px -100px 0px",
       }
-    }, typeSpeed);
+    );
 
-    return () => clearTimeout(timer);
-  }, [currentIndex, isDeleting, fullName]);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   return (
-    <section className="section-container bg-white min-h-screen flex items-center">
+    <section 
+      ref={sectionRef}
+      className="section-container bg-white min-h-screen flex items-center"
+    >
       <div className="text-center max-w-4xl mx-auto">
         <div className="mb-8">
-          <p className="text-xl text-gray-600 mb-4">Hello, I'm</p>
+          <p className={`text-xl text-gray-600 mb-4 transition-all duration-800 ease-out ${
+            isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-4'
+          }`}>
+            Hello, I'm
+          </p>
+          
+          {/* Typewriter Name */}
           <h1 className="text-6xl md:text-7xl font-bold text-gray-900 mb-4 min-h-[1.2em]">
             {displayedText}
-            <span className="animate-pulse text-blue-600">|</span>
+            <span className={`${isTypingComplete ? 'hidden' : 'animate-pulse'}`}>|</span>
           </h1>
-          <h2 className="text-2xl md:text-3xl font-semibold text-blue-600 mb-6">
+          
+          {/* Subtitle appears after typing is complete */}
+          <h2 className={`text-2xl md:text-3xl font-semibold text-blue-600 mb-6 transition-all duration-800 ease-out ${
+            isTypingComplete 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-4'
+          }`}>
             Fullstack Developer & Data Analytics Enthusiast
           </h2>
         </div>
-        <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+        
+        {/* Description appears after subtitle */}
+        <p className={`text-xl text-gray-600 mb-8 leading-relaxed transition-all duration-800 ease-out delay-300 ${
+          isTypingComplete 
+            ? 'opacity-100 translate-y-0' 
+            : 'opacity-0 translate-y-4'
+        }`}>
           Information Systems student specializing in Business Analytics and AI,
           passionate about creating innovative solutions that bridge technology
           and business impact.
         </p>
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        
+        {/* Buttons appear last */}
+        <div className={`flex flex-wrap justify-center gap-4 mb-12 transition-all duration-800 ease-out delay-600 ${
+          isTypingComplete 
+            ? 'opacity-100 translate-y-0' 
+            : 'opacity-0 translate-y-4'
+        }`}>
           <a href="#projects" className="btn-primary">
             <svg
               className="w-5 h-5"
@@ -76,7 +136,7 @@ export default function HeroSection() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2 2v10a2 2 0 002 2z"
               />
             </svg>
             Get In Touch

@@ -1,10 +1,56 @@
-import React from "react";
+// components/About.tsx - With Repeating Animation
+"use client";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function AboutSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          } else {
+            // Reset animation when section leaves viewport
+            setIsVisible(false);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section className="section-container bg-gray-50 min-h-screen flex items-center">
-      <div className="w-full">
-        <div className="section-header">
+    <section 
+      ref={sectionRef}
+      id="about"
+      className={`about-section bg-gray-50 transition-all duration-1000 ease-out ${
+        isVisible 
+          ? 'opacity-100 translate-y-0' 
+          : 'opacity-0 translate-y-8'
+      }`}
+    >
+      <div className="about-container">
+        <div className={`section-header text-center transition-all duration-1000 ease-out delay-200 ${
+          isVisible 
+            ? 'opacity-100 translate-y-0' 
+            : 'opacity-0 translate-y-8'
+        }`}>
           <h2 className="section-title">About Me</h2>
           <p className="section-subtitle">
             A dedicated software developer with a passion for innovation and
@@ -12,53 +58,54 @@ export default function AboutSection() {
           </p>
         </div>
 
-        {/* Simple, clean side-by-side layout */}
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-row items-center gap-12">
-            {/* Text Content - 70% of space */}
-            <div className="w-2/3">
-              <div className="space-y-6">
-                <p className="text-gray-700 leading-8 text-lg">
-                  I am a passionate software developer with a strong foundation in
-                  computer science and hands-on experience in building web
-                  applications and digital solutions. My journey in technology has
-                  been driven by curiosity and a desire to solve real-world problems
-                  through code.
-                </p>
-                <p className="text-gray-700 leading-8 text-lg">
-                  With expertise spanning multiple programming languages and
-                  frameworks, I enjoy working on diverse projects that challenge me to
-                  grow and learn. I believe in writing clean, maintainable code and
-                  following industry best practices to deliver high-quality solutions.
-                </p>
-                <p className="text-gray-700 leading-8 text-lg">
-                  When I'm not coding, I enjoy exploring new technologies,
-                  contributing to open-source projects, and sharing knowledge with the
-                  developer community. I'm always eager to take on new challenges and
-                  collaborate with teams to build innovative solutions.
-                </p>
-              </div>
+        <div className="about-grid">
+          <div className={`about-content transition-all duration-1000 ease-out delay-400 ${
+            isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-8'
+          }`}>
+            <p className="text-gray-600 leading-relaxed">
+              I am a passionate software developer with a strong foundation in
+              computer science and hands-on experience in building web
+              applications and digital solutions. My journey in technology has
+              been driven by curiosity and a desire to solve real-world problems
+              through code.
+            </p>
+            <p className="text-gray-600 leading-relaxed">
+              With expertise spanning multiple programming languages and
+              frameworks, I enjoy working on diverse projects that challenge me to
+              grow and learn. I believe in writing clean, maintainable code and
+              following industry best practices to deliver high-quality solutions.
+            </p>
+            <p className="text-gray-600 leading-relaxed">
+              When I'm not coding, I enjoy exploring new technologies,
+              contributing to open-source projects, and sharing knowledge with the
+              developer community. I'm always eager to take on new challenges and
+              collaborate with teams to build innovative solutions.
+            </p>
+            
+            <div className={`technologies-section transition-all duration-1000 ease-out delay-600 ${
+              isVisible 
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-8'
+            }`}>
+              <h3 className="technologies-title">Technologies I work with:</h3>
+              <p className="technologies-list">
+                JavaScript, TypeScript, React, Next.js, Node.js, Python, Java, Vue.js, Firebase
+              </p>
             </div>
-
-            {/* Image - 30% of space with FORCED constraints, bigger and rectangular */}
-            <div className="w-1/3 flex justify-center">
-              <div className="w-64 h-64 flex-shrink-0">
-                <img
-                  src="/images/halfbody.png"
-                  alt="Chean Wei Jie - Profile Picture"
-                  className="w-full h-full object-cover shadow-lg border-4 border-white rounded-lg"
-                  style={{
-                    width: '256px !important',
-                    height: '256px !important',
-                    maxWidth: '256px',
-                    maxHeight: '256px',
-                    minWidth: '256px',
-                    minHeight: '256px',
-                    objectFit: 'cover'
-                  }}
-                />
-              </div>
-            </div>
+          </div>
+          
+          <div className={`about-image-container transition-all duration-1000 ease-out delay-300 ${
+            isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-8'
+          }`}>
+            <img 
+              src="/images/halfbody.png" 
+              alt="Chean Wei Jie - Full Stack Developer"
+              className="about-image"
+            />
           </div>
         </div>
       </div>

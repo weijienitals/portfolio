@@ -1,11 +1,15 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 
 export default function Skills() {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [skillAnimationIndex, setSkillAnimationIndex] = useState(-1);
 
-  const skillsData = [
+  // Stable skills data using useMemo
+  const skillsData = useMemo(() => [
     // Programming Languages
     { 
       name: "Python", 
@@ -125,12 +129,90 @@ export default function Skills() {
       color: "#0078d4",
       level: "Intermediate"
     },
-  ];
+  ], []);
+
+  // Intersection Observer for fade effects
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          } else {
+            // Reset animation when section leaves viewport
+            setIsVisible(false);
+            setSkillAnimationIndex(-1);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  // Calculate filtered skills
+  const filteredSkills = useMemo(() => {
+    return selectedCategory === 'all' 
+      ? skillsData 
+      : skillsData.filter(skill => skill.category === selectedCategory);
+  }, [selectedCategory, skillsData]);
+
+  // Handle staggered skill animations
+  useEffect(() => {
+    if (isVisible) {
+      setSkillAnimationIndex(-1); // Reset first
+      
+      const timer = setTimeout(() => {
+        // Start animating skills one by one
+        let currentIndex = 0;
+        const animateNextSkill = () => {
+          if (currentIndex < filteredSkills.length) {
+            setSkillAnimationIndex(currentIndex);
+            currentIndex++;
+            setTimeout(animateNextSkill, 250); // 250ms between each skill (much slower)
+          }
+        };
+        animateNextSkill();
+      }, 800); // Wait 800ms after section is visible
+
+      return () => clearTimeout(timer);
+    }
+  }, [isVisible, filteredSkills]);
+
+  // Reset animation when category changes
+  useEffect(() => {
+    if (isVisible) {
+      setSkillAnimationIndex(-1);
+      
+      const timer = setTimeout(() => {
+        let currentIndex = 0;
+        const animateNextSkill = () => {
+          if (currentIndex < filteredSkills.length) {
+            setSkillAnimationIndex(currentIndex);
+            currentIndex++;
+            setTimeout(animateNextSkill, 100); // 200ms for category changes (much slower)
+          }
+        };
+        animateNextSkill();
+      }, 300); // Longer start delay for category changes
+
+      return () => clearTimeout(timer);
+    }
+  }, [selectedCategory]);
 
   const categories = ['all', ...new Set(skillsData.map(skill => skill.category))];
-  const filteredSkills = selectedCategory === 'all' 
-    ? skillsData 
-    : skillsData.filter(skill => skill.category === selectedCategory);
 
   const getLevelColor = (level: string) => {
     switch(level) {
@@ -153,8 +235,19 @@ export default function Skills() {
   };
 
   return (
-    <section className="section-container bg-white">
-      <div className="section-header">
+    <section 
+      ref={sectionRef}
+      className={`section-container bg-white transition-all duration-1000 ease-out ${
+        isVisible 
+          ? 'opacity-100 translate-y-0' 
+          : 'opacity-0 translate-y-8'
+      }`}
+    >
+      <div className={`section-header transition-all duration-1000 ease-out delay-200 ${
+        isVisible 
+          ? 'opacity-100 translate-y-0' 
+          : 'opacity-0 translate-y-8'
+      }`}>
         <h2 className="section-title">Skills</h2>
         <p className="section-subtitle">
           Technologies and tools I use to build innovative solutions and bring ideas to life
@@ -162,14 +255,25 @@ export default function Skills() {
       </div>
 
       {/* Category Filter Buttons */}
-      <div className="skills-filter-container">
-        {categories.map((category) => (
+      <div className={`skills-filter-container transition-all duration-1000 ease-out delay-400 ${
+        isVisible 
+          ? 'opacity-100 translate-y-0' 
+          : 'opacity-0 translate-y-8'
+      }`}>
+        {categories.map((category, index) => (
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
-            className={`skills-filter-button ${
+            className={`skills-filter-button transition-all duration-500 ease-out ${
               selectedCategory === category ? 'skills-filter-active' : ''
+            } ${
+              isVisible 
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-4'
             }`}
+            style={{ 
+              transitionDelay: `${600 + index * 100}ms` 
+            }}
           >
             {category === 'all' ? (
               <>
@@ -191,14 +295,19 @@ export default function Skills() {
       </div>
 
       {/* Skills Tag Cloud */}
-      <div className="skills-cloud-container">
+      <div className={`skills-cloud-container transition-all duration-1000 ease-out delay-600 ${
+        isVisible 
+          ? 'opacity-100 translate-y-0' 
+          : 'opacity-0 translate-y-8'
+      }`}>
         {filteredSkills.map((skill, index) => (
           <div
             key={skill.name}
-            className="skill-tag-item"
-            style={{ 
-              animationDelay: `${index * 0.05}s`,
-            }}
+            className={`skill-tag-item transition-all duration-500 ease-out ${
+              index <= skillAnimationIndex
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-4'
+            }`}
           >
             <div 
               className="skill-tag-icon-container" 
@@ -222,8 +331,6 @@ export default function Skills() {
           </div>
         ))}
       </div>
-
-      
     </section>
   );
 }
