@@ -53,67 +53,67 @@ export default function Skills() {
       category: "Web Development",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
       color: "#1572b6",
-      level: "Expert"
+      level: "Advanced"
     },
     { 
       name: "Vue.js", 
       category: "Web Development",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
       color: "#4fc08d",
-      level: "Advanced"
+      level: "Intermediate"
     },
     { 
       name: "React", 
       category: "Web Development",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
       color: "#61dafb",
-      level: "Advanced"
+      level: "Intermediate"
     },
-    
+
     // Data & Analytics
-    { 
-      name: "SQL", 
-      category: "Data & Analytics",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-      color: "#336791",
-      level: "Advanced"
-    },
     { 
       name: "NumPy", 
       category: "Data & Analytics",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg",
       color: "#013243",
-      level: "Intermediate"
+      level: "Advanced"
     },
     { 
       name: "Pandas", 
       category: "Data & Analytics",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg",
       color: "#150458",
+      level: "Advanced"
+    },
+    { 
+      name: "Matplotlib", 
+      category: "Data & Analytics",
+      icon: "https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg",
+      color: "#11557c",
       level: "Intermediate"
     },
     { 
       name: "Excel", 
       category: "Data & Analytics",
-      icon: "https://img.icons8.com/color/48/microsoft-excel-2019.png",
+      icon: "https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg",
       color: "#217346",
       level: "Advanced"
     },
-    
+
     // Tools & Platforms
-    { 
-      name: "Docker", 
-      category: "Tools & Platforms",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-      color: "#2496ed",
-      level: "Intermediate"
-    },
     { 
       name: "Git", 
       category: "Tools & Platforms",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
       color: "#f05032",
       level: "Advanced"
+    },
+    { 
+      name: "Docker", 
+      category: "Tools & Platforms",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+      color: "#2496ed",
+      level: "Intermediate"
     },
     { 
       name: "Firebase", 
@@ -127,117 +127,100 @@ export default function Skills() {
       category: "Tools & Platforms",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
       color: "#0078d4",
-      level: "Intermediate"
-    },
+      level: "Beginner"
+    }
   ], []);
 
-  // Intersection Observer for fade effects
+  const categories = useMemo(() => [
+    "all",
+    "Programming Languages", 
+    "Web Development", 
+    "Data & Analytics", 
+    "Tools & Platforms"
+  ], []);
+
+  // Helper function to get category icons
+  const getCategoryIcon = (category: string) => {
+    const iconMap: { [key: string]: string } = {
+      "Programming Languages": "💻",
+      "Web Development": "🌐", 
+      "Data & Analytics": "📊",
+      "Tools & Platforms": "🛠️"
+    };
+    return iconMap[category] || "🔧";
+  };
+
+  // Filter skills based on selected category
+  const filteredSkills = useMemo(() => {
+    if (selectedCategory === 'all') return skillsData;
+    return skillsData.filter(skill => skill.category === selectedCategory);
+  }, [selectedCategory, skillsData]);
+
+  // Intersection Observer for animations
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsVisible(true);
-          } else {
-            // Reset animation when section leaves viewport
-            setIsVisible(false);
-            setSkillAnimationIndex(-1);
+            setTimeout(() => {
+              setSkillAnimationIndex(0);
+            }, 300);
           }
         });
       },
-      {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
-      }
+      { threshold: 0.2 }
     );
 
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
 
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
+    return () => observer.disconnect();
   }, []);
 
-  // Calculate filtered skills
-  const filteredSkills = useMemo(() => {
-    return selectedCategory === 'all' 
-      ? skillsData 
-      : skillsData.filter(skill => skill.category === selectedCategory);
-  }, [selectedCategory, skillsData]);
-
-  // Handle staggered skill animations
+  // Stagger animations for skill items
   useEffect(() => {
-    if (isVisible) {
-      setSkillAnimationIndex(-1); // Reset first
-      
+    if (skillAnimationIndex >= 0 && skillAnimationIndex < filteredSkills.length - 1) {
       const timer = setTimeout(() => {
-        // Start animating skills one by one
-        let currentIndex = 0;
-        const animateNextSkill = () => {
-          if (currentIndex < filteredSkills.length) {
-            setSkillAnimationIndex(currentIndex);
-            currentIndex++;
-            setTimeout(animateNextSkill, 250); // 250ms between each skill (much slower)
-          }
-        };
-        animateNextSkill();
-      }, 800); // Wait 800ms after section is visible
-
+        setSkillAnimationIndex(prev => prev + 1);
+      }, 50);
       return () => clearTimeout(timer);
     }
-  }, [isVisible, filteredSkills]);
+  }, [skillAnimationIndex, filteredSkills.length]);
 
-  // Reset animation when category changes
-  useEffect(() => {
-    if (isVisible) {
-      setSkillAnimationIndex(-1);
-      
-      const timer = setTimeout(() => {
-        let currentIndex = 0;
-        const animateNextSkill = () => {
-          if (currentIndex < filteredSkills.length) {
-            setSkillAnimationIndex(currentIndex);
-            currentIndex++;
-            setTimeout(animateNextSkill, 100); // 200ms for category changes (much slower)
-          }
-        };
-        animateNextSkill();
-      }, 300); // Longer start delay for category changes
-
-      return () => clearTimeout(timer);
-    }
-  }, [selectedCategory]);
-
-  const categories = ['all', ...new Set(skillsData.map(skill => skill.category))];
-
-  const getLevelColor = (level: string) => {
-    switch(level) {
-      case 'Expert': return '#10b981'; // green
-      case 'Advanced': return '#3b82f6'; // blue
-      case 'Intermediate': return '#f59e0b'; // yellow
-      case 'Beginner': return '#6b7280'; // gray
-      default: return '#6b7280';
-    }
-  };
-
-  const getCategoryIcon = (category: string) => {
-    switch(category) {
-      case 'Programming Languages': return '💻';
-      case 'Web Development': return '🌐';
-      case 'Data & Analytics': return '📊';
-      case 'Tools & Platforms': return '🛠️';
-      default: return '🔧';
-    }
-  };
+  // Cloud View Skill Tag Component
+  const SkillTagItem = ({ skill, delay = 0 }: { skill: any; delay?: number }) => (
+    <div 
+      className="skill-tag-item mobile-skill-tag"
+      style={{ animationDelay: `${delay}ms` }}
+    >
+      <div className="skill-tag-icon-container">
+        <img 
+          src={skill.icon} 
+          alt={`${skill.name} icon`}
+          className="skill-tag-icon"
+          loading="lazy"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.style.display = 'none';
+            const fallback = target.parentElement?.querySelector('.skill-fallback') as HTMLElement;
+            if (fallback) {
+              fallback.style.display = 'flex';
+              fallback.textContent = skill.name.charAt(0);
+            }
+          }}
+        />
+        <div className="skill-fallback" style={{ display: 'none' }}></div>
+      </div>
+      <span className="skill-tag-name">{skill.name}</span>
+    </div>
+  );
 
   return (
     <section 
       ref={sectionRef}
-      className={`section-container bg-white transition-all duration-1000 ease-out ${
+      className={`skills-section-fullscreen bg-gray-50 transition-all duration-1000 ease-out ${
         isVisible 
           ? 'opacity-100 translate-y-0' 
           : 'opacity-0 translate-y-8'
@@ -248,14 +231,14 @@ export default function Skills() {
           ? 'opacity-100 translate-y-0' 
           : 'opacity-0 translate-y-8'
       }`}>
-        <h2 className="section-title">Skills</h2>
+        <h2 className="section-title">Technical Skills</h2>
         <p className="section-subtitle">
           Technologies and tools I use to build innovative solutions and bring ideas to life
         </p>
       </div>
 
       {/* Category Filter Buttons */}
-      <div className={`skills-filter-container transition-all duration-1000 ease-out delay-400 ${
+      <div className={`skills-filter-container mobile-filter-container transition-all duration-1000 ease-out delay-400 ${
         isVisible 
           ? 'opacity-100 translate-y-0' 
           : 'opacity-0 translate-y-8'
@@ -264,7 +247,7 @@ export default function Skills() {
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
-            className={`skills-filter-button transition-all duration-500 ease-out ${
+            className={`skills-filter-button mobile-filter-button transition-all duration-500 ease-out ${
               selectedCategory === category ? 'skills-filter-active' : ''
             } ${
               isVisible 
@@ -278,13 +261,13 @@ export default function Skills() {
             {category === 'all' ? (
               <>
                 <span className="skills-filter-icon">🎯</span>
-                <span>All Skills</span>
+                <span className="filter-text">All Skills</span>
                 <span className="skills-filter-count">({skillsData.length})</span>
               </>
             ) : (
               <>
                 <span className="skills-filter-icon">{getCategoryIcon(category)}</span>
-                <span>{category}</span>
+                <span className="filter-text">{category}</span>
                 <span className="skills-filter-count">
                   ({skillsData.filter(skill => skill.category === category).length})
                 </span>
@@ -295,41 +278,38 @@ export default function Skills() {
       </div>
 
       {/* Skills Tag Cloud */}
-      <div className={`skills-cloud-container transition-all duration-1000 ease-out delay-600 ${
+      <div className={`skills-cloud-container mobile-cloud-container transition-all duration-1000 ease-out delay-600 ${
         isVisible 
           ? 'opacity-100 translate-y-0' 
           : 'opacity-0 translate-y-8'
       }`}>
         {filteredSkills.map((skill, index) => (
-          <div
+          <SkillTagItem
             key={skill.name}
-            className={`skill-tag-item transition-all duration-500 ease-out ${
-              index <= skillAnimationIndex
-                ? 'opacity-100 translate-y-0' 
-                : 'opacity-0 translate-y-4'
-            }`}
-          >
-            <div 
-              className="skill-tag-icon-container" 
-              style={{ backgroundColor: `${skill.color}15` }}
-            >
-              <img 
-                src={skill.icon} 
-                alt={`${skill.name} icon`}
-                className="skill-tag-icon"
-                onError={(e) => {
-                  e.currentTarget.src = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/devicon/devicon-original.svg";
-                }}
-              />
-            </div>
-            <span className="skill-tag-name">{skill.name}</span>
-            <div 
-              className="skill-tag-level-indicator"
-              style={{ backgroundColor: getLevelColor(skill.level) }}
-              title={skill.level}
-            ></div>
-          </div>
+            skill={skill}
+            delay={index * 50}
+          />
         ))}
+      </div>
+
+      {/* Skills Summary Stats */}
+      <div className={`skills-summary-stats transition-all duration-1000 ease-out delay-800 ${
+        isVisible 
+          ? 'opacity-100 translate-y-0' 
+          : 'opacity-0 translate-y-8'
+      }`}>
+        <div className="skills-summary-item">
+          <div className="skills-summary-number">{skillsData.length}</div>
+          <div className="skills-summary-label">Total Skills</div>
+        </div>
+        <div className="skills-summary-item">
+          <div className="skills-summary-number">4</div>
+          <div className="skills-summary-label">Categories</div>
+        </div>
+        <div className="skills-summary-item">
+          <div className="skills-summary-number">5+</div>
+          <div className="skills-summary-label">Years Experience</div>
+        </div>
       </div>
     </section>
   );

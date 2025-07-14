@@ -3084,3 +3084,894 @@ p {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+
+/* ScrollSidebar Styles - Add to your globals.css */
+
+
+
+.scroll-sidebar {
+  position: fixed;
+  top: 50%;
+  right: -300px; /* Hidden by default */
+  transform: translateY(-50%);
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.scroll-sidebar-visible {
+  right: 24px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-sidebar-content {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(229, 231, 235, 0.8);
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 200px;
+}
+
+.scroll-sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: none;
+  background: transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  color: #64748b;
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-sidebar-item:hover {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+  transform: translateX(-2px);
+}
+
+.scroll-sidebar-item-active {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.scroll-sidebar-item-active:hover {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  transform: translateX(-2px);
+  color: white;
+}
+
+.scroll-sidebar-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+  filter: grayscale(0.3);
+  transition: filter 0.2s ease;
+}
+
+.scroll-sidebar-item:hover .scroll-sidebar-icon,
+.scroll-sidebar-item-active .scroll-sidebar-icon {
+  filter: grayscale(0);
+}
+
+.scroll-sidebar-label {
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .scroll-sidebar-visible {
+    right: 16px;
+  }
+  
+  .scroll-sidebar-content {
+    min-width: 180px;
+    padding: 10px;
+  }
+  
+  .scroll-sidebar-item {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .scroll-sidebar {
+    top: auto;
+    bottom: -200px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  
+  .scroll-sidebar-visible {
+    bottom: 24px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  
+  .scroll-sidebar-content {
+    flex-direction: row;
+    min-width: auto;
+    max-width: calc(100vw - 48px);
+    padding: 8px;
+  }
+  
+  .scroll-sidebar-item {
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 12px;
+    min-width: 60px;
+    text-align: center;
+  }
+  
+  .scroll-sidebar-label {
+    font-size: 11px;
+    font-weight: 600;
+  }
+  
+  .scroll-sidebar-icon {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-sidebar-visible {
+    bottom: 16px;
+  }
+  
+  .scroll-sidebar-content {
+    max-width: calc(100vw - 32px);
+  }
+  
+  .scroll-sidebar-item {
+    min-width: 50px;
+    padding: 6px 8px;
+  }
+  
+  .scroll-sidebar-label {
+    font-size: 10px;
+  }
+  
+  .scroll-sidebar-icon {
+    font-size: 12px;
+  }
+}
+
+/* Dark mode support (if you implement it later) */
+@media (prefers-color-scheme: dark) {
+  .scroll-sidebar-content {
+    background: rgba(17, 24, 39, 0.95);
+    border-color: rgba(75, 85, 99, 0.8);
+  }
+  
+  .scroll-sidebar-item {
+    color: #9ca3af;
+  }
+  
+  .scroll-sidebar-item:hover {
+    background: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+  }
+}
+
+/* Animation for better UX */
+.scroll-sidebar-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1));
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.scroll-sidebar-item:hover::before {
+  opacity: 1;
+}
+
+
+
+/* Cloud-Only Skills CSS - Add to your globals.css */
+
+/* Full Viewport Skills Section */
+.skills-section-fullscreen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+/* Adjust section header for fullscreen */
+.skills-section-fullscreen .section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.skills-section-fullscreen .section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.skills-section-fullscreen .section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #3b82f6;
+  border-radius: 2px;
+}
+
+.skills-section-fullscreen .section-subtitle {
+  font-size: 1.125rem;
+  color: #718096;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Mobile-Responsive Filter Container */
+.mobile-filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 16px;
+  border: 1px solid #f0f0f0;
+}
+
+/* Filter Button Styling */
+.mobile-filter-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  background: #ffffff;
+  color: #718096;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.mobile-filter-button:hover {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Active Filter Button */
+.mobile-filter-button.skills-filter-active {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%) !important;
+  color: white !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
+  transform: translateY(-2px) !important;
+}
+
+.mobile-filter-button.skills-filter-active:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #7c3aed 100%) !important;
+}
+
+/* Filter Button Elements */
+.skills-filter-icon {
+  font-size: 1.1rem;
+  filter: brightness(0.9);
+}
+
+.skills-filter-count {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+.mobile-filter-button.skills-filter-active .skills-filter-count {
+  opacity: 0.9;
+}
+
+/* Skills Cloud Container */
+.mobile-cloud-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #f0f0f0;
+  min-height: 300px;
+  align-items: start;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Individual Skill Tag - Uniform Size */
+.mobile-skill-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: #ffffff;
+  border: 2px solid #f0f0f0;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  animation: skillFadeIn 0.3s ease-out forwards;
+  opacity: 0;
+  transform: translateY(10px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  min-height: 70px;
+  min-width: 160px;
+  text-align: center;
+  flex-direction: column;
+}
+
+@keyframes skillFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-skill-tag:hover {
+  background: #f8fafc;
+  border-color: #3b82f6;
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(59, 130, 246, 0.15);
+}
+
+/* Skill Tag Icon Container */
+.skill-tag-icon-container {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 6px;
+  transition: all 0.3s ease;
+  background: rgba(248, 250, 252, 0.5);
+  margin-bottom: 0.5rem;
+}
+
+.mobile-skill-tag:hover .skill-tag-icon-container {
+  transform: scale(1.1);
+  background: rgba(59, 130, 246, 0.1);
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.2);
+}
+
+/* Skill Tag Icon */
+.skill-tag-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.mobile-skill-tag:hover .skill-tag-icon {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
+/* Skill Tag Name */
+.skill-tag-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #2d3748;
+  transition: color 0.3s ease;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.mobile-skill-tag:hover .skill-tag-name {
+  color: #1a202c;
+}
+
+/* Fallback for broken images */
+.skill-fallback {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e0 100%);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+/* Skills Summary Stats */
+.skills-summary-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(248, 250, 252, 0.5);
+  border-radius: 16px;
+  border: 1px solid #f0f0f0;
+}
+
+.skills-summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.skills-summary-number {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.skills-summary-label {
+  font-size: 0.9rem;
+  color: #718096;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Mobile Responsive Breakpoints */
+@media (max-width: 768px) {
+  .skills-section-fullscreen {
+    min-height: 100vh;
+    padding: 1.5rem 0.75rem;
+  }
+
+  .skills-section-fullscreen .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .skills-section-fullscreen .section-title {
+    font-size: 2rem;
+  }
+
+  .mobile-filter-container {
+    gap: 0.5rem;
+    padding: 0.75rem;
+    margin-bottom: 2rem;
+    flex-direction: row;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .mobile-filter-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile-filter-button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+    min-width: fit-content;
+  }
+
+  /* Hide full text on mobile, show icon + count */
+  .filter-text {
+    display: none;
+  }
+
+  .mobile-filter-button .skills-filter-icon {
+    font-size: 1.1rem;
+  }
+
+  .mobile-filter-button .skills-filter-count {
+    font-size: 0.8rem;
+    opacity: 0.8;
+  }
+
+  .mobile-cloud-container {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.75rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    min-height: 250px;
+  }
+
+  .mobile-skill-tag {
+    padding: 0.75rem 1rem;
+    gap: 0.5rem;
+    min-height: 60px;
+    min-width: 130px;
+  }
+
+  .skill-tag-icon-container {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 0.4rem;
+  }
+
+  .skill-tag-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .skill-tag-name {
+    font-size: 0.85rem;
+  }
+
+  .skills-summary-stats {
+    gap: 1rem;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .skills-summary-number {
+    font-size: 1.5rem;
+  }
+  
+  .skills-summary-label {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .skills-section-fullscreen {
+    padding: 1rem 0.5rem;
+  }
+
+  .mobile-filter-container {
+    padding: 0.5rem;
+    gap: 0.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .mobile-filter-button {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .mobile-filter-button .skills-filter-icon {
+    font-size: 1rem;
+  }
+
+  .mobile-cloud-container {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    padding: 1rem;
+    gap: 0.5rem;
+    min-height: 200px;
+  }
+
+  .mobile-skill-tag {
+    padding: 0.6rem 0.8rem;
+    gap: 0.4rem;
+    min-height: 55px;
+    min-width: 110px;
+  }
+
+  .skill-tag-icon-container {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 0.3rem;
+  }
+
+  .skill-tag-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .skill-tag-name {
+    font-size: 0.8rem;
+  }
+
+  .skills-summary-stats {
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-section-fullscreen {
+    padding: 0.75rem 0.25rem;
+  }
+
+  .skills-section-fullscreen .section-title {
+    font-size: 1.75rem;
+  }
+
+  .mobile-filter-container {
+    padding: 0.5rem;
+    gap: 0.25rem;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .mobile-filter-button {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.75rem;
+    min-width: 60px;
+    justify-content: center;
+  }
+
+  /* Hide counts on very small screens */
+  .mobile-filter-button .skills-filter-count {
+    display: none;
+  }
+
+  .mobile-cloud-container {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    padding: 0.75rem;
+    gap: 0.4rem;
+    min-height: 180px;
+  }
+
+  .mobile-skill-tag {
+    padding: 0.5rem 0.6rem;
+    gap: 0.35rem;
+    min-height: 50px;
+    min-width: 95px;
+  }
+
+  .skill-tag-icon-container {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 0.25rem;
+  }
+
+  .skill-tag-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .skill-tag-name {
+    font-size: 0.75rem;
+    line-height: 1.1;
+  }
+
+  .skills-summary-stats {
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+  
+  .skills-summary-number {
+    font-size: 1.25rem;
+  }
+  
+  .skills-summary-label {
+    font-size: 0.75rem;
+  }
+}
+
+/* Loading states and animations */
+.skill-tag-icon:not([src]) {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Update fallback sizing for mobile */
+@media (max-width: 640px) {
+  .skill-fallback {
+    width: 20px;
+    height: 20px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-fallback {
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+  }
+}
+
+/* Accessibility improvements */
+.mobile-filter-button:focus-visible,
+.mobile-skill-tag:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .mobile-skill-tag {
+    animation: none;
+  }
+  
+  .mobile-skill-tag:hover {
+    transform: none;
+  }
+  
+  .mobile-filter-button:hover {
+    transform: none;
+  }
+  
+  .skill-tag-icon-container,
+  .skill-tag-icon {
+    transition: none;
+  }
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+  .mobile-filter-container {
+    background: #1a202c;
+    border-color: #2d3748;
+  }
+
+  .mobile-filter-button {
+    background: #2d3748;
+    color: #a0aec0;
+    border-color: #4a5568;
+  }
+
+  .mobile-filter-button:hover {
+    background: #4a5568;
+    border-color: #718096;
+  }
+
+  .mobile-cloud-container {
+    background: #1a202c;
+    border-color: #2d3748;
+  }
+
+  .mobile-skill-tag {
+    background: #2d3748;
+    border-color: #4a5568;
+  }
+
+  .mobile-skill-tag:hover {
+    background: #4a5568;
+    border-color: #718096;
+  }
+
+  .skill-tag-name {
+    color: #e2e8f0;
+  }
+
+  .mobile-skill-tag:hover .skill-tag-name {
+    color: #f7fafc;
+  }
+
+  .skills-summary-stats {
+    background: rgba(26, 32, 44, 0.5);
+    border-color: #2d3748;
+  }
+
+  .skills-summary-label {
+    color: #a0aec0;
+  }
+}
+
+
+
+
+
+
+
+
+/* MOBILE ORDER FIX - Add this */
+@media (max-width: 768px) {
+  .about-grid {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .about-image-container {
+    order: 1 !important;
+  }
+
+  .about-content {
+    order: 2 !important;
+  }
+}
+
+
+
+
+
+/* Mobile Image Centering Fix - Add this to your globals.css */
+
+@media (max-width: 768px) {
+  .about-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem;
+    text-align: center;
+    align-items: center; /* Center all items */
+  }
+
+  /* Image appears first AND is centered */
+  .about-image-container {
+    order: 1 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  /* Text content appears second */
+  .about-content {
+    order: 2 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  
+  .about-image {
+    max-width: 280px !important;
+    height: 320px !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+  
+  .about-container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-image {
+    max-width: 240px !important;
+    height: 280px !important;
+    margin: 0 auto !important;
+  }
+  
+  .about-grid {
+    gap: 1.5rem;
+  }
+}

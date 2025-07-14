@@ -7,6 +7,7 @@ import AboutSection from "@/components/About";
 import ContactSection from "@/components/Contact";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ScrollSidebar from "@/components/ScrollSidebar"; // Add this import
 
 // Main Portfolio Page Component
 export default function PortfolioPage() {
@@ -27,8 +28,13 @@ export default function PortfolioPage() {
         <div id="experience">
           <Experience />
         </div>
-        <ContactSection />
+        <div id="contact">
+          <ContactSection />
+        </div>
       </main>
+      
+      {/* Add the ScrollSidebar component */}
+      <ScrollSidebar />
       
       {/* New Professional Footer */}
       <Footer />
