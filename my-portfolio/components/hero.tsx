@@ -7,7 +7,7 @@ export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
   const [displayedText, setDisplayedText] = useState("");
   const [isTypingComplete, setIsTypingComplete] = useState(false);
-  
+
   const fullName = "Chean Wei Jie";
 
   // Typewriter effect for name
@@ -62,53 +62,65 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section 
+    <section
       ref={sectionRef}
       className="section-container bg-white min-h-screen flex items-center"
     >
       <div className="text-center max-w-4xl mx-auto">
         <div className="mb-8">
-          <p className={`text-xl text-gray-600 mb-4 transition-all duration-800 ease-out ${
-            isVisible 
-              ? 'opacity-100 translate-y-0' 
-              : 'opacity-0 translate-y-4'
-          }`}>
+          <p
+            className={`text-xl text-gray-600 mb-4 transition-all duration-800 ease-out ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-4"
+            }`}
+          >
             Hello, I'm
           </p>
-          
+
           {/* Typewriter Name */}
           <h1 className="text-6xl md:text-7xl font-bold text-gray-900 mb-4 min-h-[1.2em]">
             {displayedText}
-            <span className={`${isTypingComplete ? 'hidden' : 'animate-pulse'}`}>|</span>
+            <span
+              className={`${isTypingComplete ? "hidden" : "animate-pulse"}`}
+            >
+              |
+            </span>
           </h1>
-          
+
           {/* Subtitle appears after typing is complete */}
-          <h2 className={`text-2xl md:text-3xl font-semibold text-blue-600 mb-6 transition-all duration-800 ease-out ${
-            isTypingComplete 
-              ? 'opacity-100 translate-y-0' 
-              : 'opacity-0 translate-y-4'
-          }`}>
+          <h2
+            className={`text-2xl md:text-3xl font-semibold text-blue-600 mb-6 transition-all duration-800 ease-out ${
+              isTypingComplete
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-4"
+            }`}
+          >
             Fullstack Developer & Data Analytics Enthusiast
           </h2>
         </div>
-        
+
         {/* Description appears after subtitle */}
-        <p className={`text-xl text-gray-600 mb-8 leading-relaxed transition-all duration-800 ease-out delay-300 ${
-          isTypingComplete 
-            ? 'opacity-100 translate-y-0' 
-            : 'opacity-0 translate-y-4'
-        }`}>
+        <p
+          className={`text-xl text-gray-600 mb-8 leading-relaxed transition-all duration-800 ease-out delay-300 ${
+            isTypingComplete
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-4"
+          }`}
+        >
           Information Systems student specializing in Business Analytics and AI,
           passionate about creating innovative solutions that bridge technology
           and business impact.
         </p>
-        
+
         {/* Buttons appear last */}
-        <div className={`flex flex-wrap justify-center gap-4 mb-12 transition-all duration-800 ease-out delay-600 ${
-          isTypingComplete 
-            ? 'opacity-100 translate-y-0' 
-            : 'opacity-0 translate-y-4'
-        }`}>
+        <div
+          className={`flex flex-wrap justify-center gap-4 mb-12 transition-all duration-800 ease-out delay-600 ${
+            isTypingComplete
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-4"
+          }`}
+        >
           <a href="#projects" className="btn-primary">
             <svg
               className="w-5 h-5"
@@ -125,6 +137,7 @@ export default function HeroSection() {
             </svg>
             View Projects
           </a>
+
           <a href="#contact" className="btn-secondary">
             <svg
               className="w-5 h-5"
@@ -132,12 +145,8 @@ export default function HeroSection() {
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2 2v10a2 2 0 002 2z"
-              />
+              <rect x="2" y="4" width="20" height="16" rx="2" strokeWidth={2} />
+              <path d="m22 7-10 5L2 7" strokeWidth={2} />
             </svg>
             Get In Touch
           </a>

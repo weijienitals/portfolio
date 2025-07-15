@@ -291,26 +291,6 @@ export default function Skills() {
           />
         ))}
       </div>
-
-      {/* Skills Summary Stats */}
-      <div className={`skills-summary-stats transition-all duration-1000 ease-out delay-800 ${
-        isVisible 
-          ? 'opacity-100 translate-y-0' 
-          : 'opacity-0 translate-y-8'
-      }`}>
-        <div className="skills-summary-item">
-          <div className="skills-summary-number">{skillsData.length}</div>
-          <div className="skills-summary-label">Total Skills</div>
-        </div>
-        <div className="skills-summary-item">
-          <div className="skills-summary-number">4</div>
-          <div className="skills-summary-label">Categories</div>
-        </div>
-        <div className="skills-summary-item">
-          <div className="skills-summary-number">5+</div>
-          <div className="skills-summary-label">Years Experience</div>
-        </div>
-      </div>
     </section>
   );
 }

@@ -224,11 +224,6 @@ export default function ProjectsPage() {
       </nav>
 
       <div className="section-container">
-        <div className="professional-section-header">
-          <p className="professional-section-subtitle">
-            Explore my complete portfolio of software development projects, from web applications to data analytics solutions
-          </p>
-        </div>
 
         {/* Category Filter Buttons */}
         <div className="projects-filter-container">

@@ -1,4 +1,4 @@
-// components/About.tsx - With Repeating Animation
+// components/About.tsx - With Full Viewport Height
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 

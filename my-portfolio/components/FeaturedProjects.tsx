@@ -71,7 +71,7 @@ export default function FeaturedProjects() {
       impact: "Connecting 500+ volunteers with local nonprofits",
       github: "#",
       demo: "#",
-      image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      image: "/images/volunteer.png",
       features: [
         "User authentication and profile management",
         "Advanced search and filtering system",
@@ -97,7 +97,7 @@ export default function FeaturedProjects() {
       impact: "Demonstrating advanced Java programming skills",
       github: "#",
       demo: "#",
-      image: "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      image: "images/parade.png",
       features: [
         "Complete game logic implementation",
         "AI opponents with difficulty levels",
@@ -113,7 +113,7 @@ export default function FeaturedProjects() {
       ]
     },
     {
-      title: "E-commerce Analytics Dashboard",
+      title: "Food Ordering & Management System",
       period: "Dec 2024 – Feb 2025",
       description: "Real-time analytics dashboard for e-commerce businesses with predictive insights and automated reporting capabilities.",
       longDescription: "A comprehensive analytics platform that processes real-time e-commerce data to provide actionable insights for business growth. Features include predictive analytics, automated reporting, and interactive data visualizations.",
@@ -123,7 +123,7 @@ export default function FeaturedProjects() {
       impact: "Helping businesses increase revenue by 25%",
       github: "#",
       demo: "#",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      image: "images/foodordering2.png",
       features: [
         "Real-time data processing and visualization",
         "Predictive analytics using machine learning",
@@ -168,32 +168,30 @@ export default function FeaturedProjects() {
           alt={`${project.title} preview`}
           className="featured-project-image"
         />
+        {/* Centered hover overlay with eye icon and "View Details" */}
         <div className="project-hover-overlay">
           <div className="project-hover-content">
-            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+            <svg 
+              className="w-12 h-12 text-white mb-2" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" 
+              />
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" 
+              />
             </svg>
-            <span className="view-details-text">View Details</span>
-            <div className="click-instruction">
-              <svg className="click-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
-              </svg>
-              Click to explore
-            </div>
+            <span className="view-details-text text-white font-semibold text-lg">View Details</span>
           </div>
-        </div>
-        <div className="click-hint-badge">
-          Click for details
-        </div>
-        <div className="featured-project-image-overlay">
-          <span 
-            className={`featured-project-status ${
-              project.status === 'Completed' ? 'status-completed' : 'status-in-progress'
-            }`}
-          >
-            {project.status}
-          </span>
         </div>
       </div>
       
@@ -217,11 +215,6 @@ export default function FeaturedProjects() {
               +{project.technologies.length - 4} more
             </span>
           )}
-        </div>
-        
-        <div className="featured-project-impact">
-          <span className="featured-project-impact-label">Impact:</span>
-          <span className="featured-project-impact-text">{project.impact}</span>
         </div>
       </div>
     </div>
