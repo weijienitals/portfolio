@@ -77,7 +77,8 @@ p {
   color: var(--color-text-secondary);
 }
 
-/* Professional Card Styles */
+
+/* Professional Card Styles for get in touch section (START) */
 .professional-card {
   background: var(--color-background);
   border: 1px solid var(--color-border);
@@ -93,7 +94,12 @@ p {
   border-color: var(--color-accent);
 }
 
-/* Professional Button Styles */
+/* Professional Card Styles for get in touch section (END) */
+
+
+
+
+/* Professional Button Styles  for get in touch and landing page (START) */
 .btn-primary {
   background: var(--color-primary);
   color: white;
@@ -134,52 +140,16 @@ p {
   border-color: var(--color-accent);
 }
 
-/* Professional Tag/Badge Styles */
-.professional-tag {
-  background: var(--color-surface);
-  color: var(--color-text-secondary);
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  border: 1px solid var(--color-border-light);
-}
+/* Professional Button Styles  for get in touch and landing page (END) */
 
-.professional-tag.primary {
-  background: rgba(52, 152, 219, 0.1);
-  color: var(--color-accent);
-  border-color: rgba(52, 152, 219, 0.2);
-}
 
-.professional-tag.completed {
-  background: rgba(39, 174, 96, 0.1);
-  color: #27ae60;
-  border-color: rgba(39, 174, 96, 0.2);
-}
 
-.professional-tag.in-progress {
-  background: rgba(230, 126, 34, 0.1);
-  color: #e67e22;
-  border-color: rgba(230, 126, 34, 0.2);
-}
 
-/* Professional Progress Bar */
-.progress-container {
-  background: var(--color-surface);
-  border-radius: 10px;
-  height: 8px;
-  overflow: hidden;
-  position: relative;
-}
 
-.progress-bar {
-  background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
-  height: 100%;
-  border-radius: 10px;
-  transition: width 0.6s ease-in-out;
-}
 
-/* Professional Section Styles */
+
+
+/* Professional Section Styles for featured projects section (START) */
 .section-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -218,6 +188,11 @@ p {
   margin: 0 auto;
 }
 
+
+/* Professional Section Styles for featured projects section (END) */
+
+
+
 /* Grid Layouts */
 .grid-2 {
   display: grid;
@@ -237,272 +212,7 @@ p {
   gap: var(--spacing-md);
 }
 
-/* Professional Skill Card */
-.skill-category {
-  background: var(--color-background);
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-lg);
-  padding: var(--spacing-lg);
-  transition: all 0.2s ease-in-out;
-}
 
-.skill-category:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px var(--color-shadow-hover);
-}
-
-.skill-category-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: var(--spacing-md);
-  padding-bottom: var(--spacing-sm);
-  border-bottom: 1px solid var(--color-border-light);
-}
-
-.skill-category-icon {
-  font-size: 1.5rem;
-  margin-right: var(--spacing-sm);
-}
-
-.skill-category-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--color-text-primary);
-}
-
-.skill-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--spacing-xs) 0;
-  border-bottom: 1px solid var(--color-border-light);
-}
-
-.skill-item:last-child {
-  border-bottom: none;
-}
-
-.skill-info h4 {
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--color-text-primary);
-  margin-bottom: 0.25rem;
-}
-
-.skill-info p {
-  font-size: 0.875rem;
-  color: var(--color-text-muted);
-  margin: 0;
-}
-
-.skill-level {
-  min-width: 80px;
-  text-align: right;
-}
-
-.skill-percentage {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--color-accent);
-  margin-bottom: 0.25rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  :root {
-    --spacing-xl: 2rem;
-    --spacing-2xl: 2.5rem;
-  }
-  
-  .section-container {
-    padding: var(--spacing-xl) var(--spacing-sm);
-  }
-  
-  .section-title {
-    font-size: 2rem;
-  }
-  
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.75rem; }
-  
-  .grid-2,
-  .grid-3,
-  .grid-4 {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-md);
-  }
-  
-  .professional-card,
-  .skill-category,
-  .project-card {
-    padding: var(--spacing-md);
-  }
-}
-
-/* Accessibility */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* Focus styles for accessibility */
-*:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-  border-radius: var(--border-radius-sm);
-}
-
-/* Selection styles */
-::selection {
-  background: rgba(52, 152, 219, 0.2);
-  color: var(--color-text-primary);
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-surface);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--color-border);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-text-muted);
-}
-
-
-/* Add pulse animation for active state */
-@keyframes pulse-indicator {
-  0%, 100% {
-    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
-  }
-  50% {
-    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-/* ===== PROFESSIONAL NAVIGATION STYLES ===== */
-
-/* Professional Navigation Bar */
-.professional-nav {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  position: sticky;
-  top: 0;
-  z-index: 50;
-}
-
-.professional-nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 70px;
-}
-
-/* Modern Back Button */
-.modern-back-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  background: #f8fafc;
-  color: #64748b;
-  text-decoration: none;
-  border-radius: 10px;
-  font-weight: 500;
-  font-size: 0.9rem;
-  transition: all 0.2s ease;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-.modern-back-btn:hover {
-  background: #ffffff;
-  color: #3b82f6;
-  border-color: #3b82f6;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
-  transform: translateY(-1px);
-}
-
-.modern-back-btn svg {
-  width: 16px;
-  height: 16px;
-  transition: transform 0.2s ease;
-}
-
-.modern-back-btn:hover svg {
-  transform: translateX(-2px);
-}
-
-/* Modern Page Title */
-.modern-page-title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.modern-page-title h1 {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #1e293b;
-  margin: 0;
-  line-height: 1.2;
-  letter-spacing: -0.025em;
-}
-
-.modern-page-title .project-count {
-  font-size: 0.875rem;
-  color: #64748b;
-  font-weight: 500;
-  margin-top: 0.25rem;
-}
-
-/* Professional Section Header */
-.professional-section-header {
-  text-align: center;
-  margin: 2rem 0 3rem 0;
-  padding: 0 1rem;
-}
-
-.professional-section-subtitle {
-  font-size: 1.1rem;
-  color: #64748b;
-  line-height: 1.6;
-  max-width: 600px;
-  margin: 0 auto;
-  font-weight: 400;
-}
-
-/* Spacer for navigation balance */
-.nav-spacer {
-  width: 140px;
-  flex-shrink: 0;
-}
 
 /* ===== FEATURED PROJECTS (MAIN PAGE) STYLES ===== */
 
@@ -609,52 +319,7 @@ p {
   overflow: hidden;
 }
 
-/* Featured Project Technologies */
-.featured-project-technologies {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-xs, 0.5rem);
-  margin-bottom: var(--spacing-xs, 0.5rem);
-}
 
-.featured-project-tech-tag {
-  font-size: 0.7rem;
-  font-weight: 500;
-  padding: 0.2rem 0.5rem;
-  background: var(--color-surface, #f8fafc);
-  color: var(--color-text-secondary, #718096);
-  border-radius: 16px;
-  border: 1px solid var(--color-border-light, #f0f0f0);
-}
-
-.featured-project-tech-more {
-  font-size: 0.75rem;
-  color: var(--color-text-secondary, #718096);
-  font-style: italic;
-}
-
-/* Featured Project Impact */
-.featured-project-impact {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-xs, 0.5rem);
-  margin-bottom: var(--spacing-sm, 0.75rem);
-  padding: var(--spacing-xs, 0.5rem);
-  background: var(--color-surface, #f8fafc);
-  border-radius: var(--border-radius-sm, 8px);
-  border-left: 3px solid var(--color-accent, #3b82f6);
-}
-
-.featured-project-impact-label {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--color-text-primary, #2d3748);
-}
-
-.featured-project-impact-text {
-  font-size: 0.8rem;
-  color: var(--color-text-secondary, #718096);
-}
 
 /* Featured Project Actions */
 .featured-project-actions {
@@ -1194,7 +859,10 @@ p {
 
 
 
-/* about section proportionate styling
+
+
+
+/* about section proportionate styling (START)
 
 /* Add these styles to your globals.css or component styles */
 
@@ -2268,45 +1936,6 @@ p {
   text-transform: uppercase;
 }
 
-/* Skills Summary Stats */
-.skills-summary-stats {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-  padding: 1.5rem;
-  background: rgba(248, 250, 252, 0.5);
-  border-radius: 16px;
-  border: 1px solid #f0f0f0;
-}
-
-.skills-summary-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  text-align: center;
-}
-
-.skills-summary-number {
-  font-size: 2rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1;
-}
-
-.skills-summary-label {
-  font-size: 0.9rem;
-  color: #718096;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
 /* Mobile Responsive Breakpoints */
 @media (max-width: 768px) {
   .skills-section-fullscreen {
@@ -2589,8 +2218,6 @@ p {
     transition: none;
   }
 }
-
-
 
 
 
