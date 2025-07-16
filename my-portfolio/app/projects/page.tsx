@@ -261,25 +261,7 @@ export default function ProjectsPage() {
           ))}
         </div>
 
-        {/* Projects Summary */}
-        <div className="projects-summary">
-          <div className="projects-summary-stats">
-            <div className="projects-summary-item">
-              <span className="projects-summary-number">{allProjects.length}</span>
-              <span className="projects-summary-label">Total Projects</span>
-            </div>
-            <div className="projects-summary-item">
-              <span className="projects-summary-number">{categories.length - 1}</span>
-              <span className="projects-summary-label">Categories</span>
-            </div>
-            <div className="projects-summary-item">
-              <span className="projects-summary-number">
-                {allProjects.filter(project => project.status === 'Completed').length}
-              </span>
-              <span className="projects-summary-label">Completed</span>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
   );
