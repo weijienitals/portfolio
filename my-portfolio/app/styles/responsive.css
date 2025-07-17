@@ -1,0 +1,526 @@
+/* ============================================ */
+/* RESPONSIVE DESIGN */
+/* ============================================ */
+
+/* ===== TABLET (768px and below) ===== */
+@media (max-width: 768px) {
+    /* Featured Projects */
+    .featured-projects-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  
+    .featured-project-image-container {
+      height: 180px;
+    }
+  
+    .featured-project-content {
+      padding: 1.25rem;
+    }
+  
+    .featured-project-title {
+      font-size: 1.125rem;
+    }
+  
+    .project-hover-content {
+      gap: 0.375rem;
+    }
+  
+    .view-details-text {
+      font-size: 1rem;
+    }
+  
+    /* Projects Page */
+    .projects-filter-container {
+      gap: 0.5rem;
+      padding: 0.75rem;
+    }
+  
+    .projects-filter-button {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.85rem;
+    }
+  
+    .projects-grid-container {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+  
+    .project-grid-content {
+      padding: 0.5rem;
+    }
+  
+    .project-grid-title {
+      font-size: 1rem;
+    }
+  
+    .projects-summary-stats {
+      gap: 1rem;
+    }
+  
+    .projects-summary-number {
+      font-size: 1.5rem;
+    }
+  
+    /* Skills Section */
+    .skills-section-fullscreen {
+      min-height: 100vh;
+      padding: 1.5rem 0.75rem;
+    }
+  
+    .skills-section-fullscreen .section-header {
+      margin-bottom: 2rem;
+    }
+  
+    .skills-section-fullscreen .section-title {
+      font-size: 2rem;
+    }
+  
+    .mobile-filter-container {
+      gap: 0.5rem;
+      padding: 0.75rem;
+      margin-bottom: 2rem;
+      flex-direction: row;
+      justify-content: flex-start;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+  
+    .mobile-filter-container::-webkit-scrollbar {
+      display: none;
+    }
+  
+    .mobile-filter-button {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+      min-width: fit-content;
+    }
+  
+    .filter-text {
+      display: none;
+    }
+  
+    .mobile-cloud-container {
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.75rem;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      min-height: 250px;
+    }
+  
+    .mobile-skill-tag {
+      padding: 0.75rem 1rem;
+      gap: 0.5rem;
+      min-height: 60px;
+      min-width: 130px;
+    }
+  
+    .skill-tag-icon-container {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 0.4rem;
+    }
+  
+    .skill-tag-icon {
+      width: 24px;
+      height: 24px;
+    }
+  
+    .skill-tag-name {
+      font-size: 0.85rem;
+    }
+  
+    /* Navigation */
+    .professional-nav-container {
+      padding: 0 0.75rem;
+      height: 60px;
+    }
+  
+    .modern-page-title h1 {
+      font-size: 1.5rem;
+    }
+  
+    .modern-page-title .project-count {
+      font-size: 0.8rem;
+    }
+  
+    .modern-back-btn {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.85rem;
+    }
+  
+    .modern-back-btn svg {
+      width: 14px;
+      height: 14px;
+    }
+  
+    .nav-spacer {
+      width: 100px;
+    }
+  
+    .professional-section-header {
+      margin: 1.5rem 0 2rem 0;
+    }
+  
+    .professional-section-subtitle {
+      font-size: 1rem;
+    }
+  
+    /* ScrollSidebar - Mobile Layout */
+    .scroll-sidebar {
+      top: auto;
+      bottom: -200px;
+      right: 50%;
+      transform: translateX(50%);
+    }
+    
+    .scroll-sidebar-visible {
+      bottom: 24px;
+      right: 50%;
+      transform: translateX(50%);
+    }
+    
+    .scroll-sidebar-content {
+      flex-direction: row;
+      min-width: auto;
+      max-width: calc(100vw - 48px);
+      padding: 8px;
+    }
+    
+    .scroll-sidebar-item {
+      flex-direction: column;
+      gap: 4px;
+      padding: 8px 12px;
+      min-width: 60px;
+      text-align: center;
+    }
+    
+    .scroll-sidebar-label {
+      font-size: 11px;
+      font-weight: 600;
+    }
+    
+    .scroll-sidebar-icon {
+      font-size: 14px;
+    }
+  
+    /* Modals */
+    .modal-container {
+      margin: 0.5rem;
+      max-height: 95vh;
+    }
+  
+    .modal-header-content {
+      flex-direction: column;
+      padding: 1.5rem;
+      gap: 1rem;
+    }
+  
+    .modal-project-image {
+      width: 100%;
+      height: 200px;
+      align-self: center;
+    }
+  
+    .modal-content {
+      padding: 1.5rem;
+      gap: 1.5rem;
+    }
+  
+    .modal-actions {
+      flex-direction: column;
+    }
+  
+    .modal-btn {
+      flex: none;
+    }
+  
+    .modal-close-btn {
+      top: 0.75rem;
+      right: 0.75rem;
+    }
+  }
+  
+  /* ===== MOBILE (480px and below) ===== */
+  @media (max-width: 480px) {
+    /* Featured Projects */
+    .featured-projects-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  
+    .featured-project-image-container {
+      height: 160px;
+    }
+  
+    .featured-project-content {
+      padding: 1rem;
+      gap: 0.75rem;
+    }
+  
+    .featured-project-meta {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  
+    .featured-project-title {
+      font-size: 1rem;
+    }
+  
+    .featured-project-description {
+      font-size: 0.875rem;
+    }
+  
+    .view-details-text {
+      font-size: 0.875rem;
+    }
+  
+    .featured-projects-cta {
+      padding: 0.75rem;
+    }
+  
+    .view-all-projects-btn {
+      padding: 0.5rem 0.8rem;
+      font-size: 0.8rem;
+    }
+  
+    /* Projects Page */
+    .projects-filter-container {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .projects-filter-button {
+      justify-content: center;
+    }
+  
+    .project-grid-image-container {
+      height: 100px;
+    }
+  
+    /* Skills Section */
+    .skills-section-fullscreen {
+      padding: 1rem 0.5rem;
+    }
+  
+    .mobile-filter-container {
+      padding: 0.5rem;
+      gap: 0.25rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .mobile-filter-button {
+      padding: 0.4rem 0.6rem;
+      font-size: 0.8rem;
+    }
+  
+    .mobile-filter-button .skills-filter-icon {
+      font-size: 1rem;
+    }
+  
+    .mobile-cloud-container {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      padding: 1rem;
+      gap: 0.5rem;
+      min-height: 200px;
+    }
+  
+    .mobile-skill-tag {
+      padding: 0.6rem 0.8rem;
+      gap: 0.4rem;
+      min-height: 55px;
+      min-width: 110px;
+    }
+  
+    .skill-tag-icon-container {
+      width: 32px;
+      height: 32px;
+      margin-bottom: 0.3rem;
+    }
+  
+    .skill-tag-icon {
+      width: 20px;
+      height: 20px;
+    }
+  
+    .skill-tag-name {
+      font-size: 0.8rem;
+    }
+  
+    /* Navigation */
+    .professional-nav-container {
+      padding: 0 0.5rem;
+      height: 56px;
+    }
+  
+    .modern-page-title h1 {
+      font-size: 1.25rem;
+    }
+  
+    .modern-page-title .project-count {
+      font-size: 0.75rem;
+    }
+  
+    .modern-back-btn {
+      padding: 0.35rem 0.6rem;
+      font-size: 0.8rem;
+      gap: 0.35rem;
+    }
+  
+    .modern-back-btn svg {
+      width: 12px;
+      height: 12px;
+    }
+  
+    .nav-spacer {
+      width: 80px;
+    }
+  
+    .professional-section-header {
+      margin: 1rem 0 1.5rem 0;
+      padding: 0 0.5rem;
+    }
+  
+    .professional-section-subtitle {
+      font-size: 0.95rem;
+    }
+  
+    /* ScrollSidebar */
+    .scroll-sidebar-visible {
+      bottom: 16px;
+    }
+    
+    .scroll-sidebar-content {
+      max-width: calc(100vw - 32px);
+    }
+    
+    .scroll-sidebar-item {
+      min-width: 50px;
+      padding: 6px 8px;
+    }
+    
+    .scroll-sidebar-label {
+      font-size: 10px;
+    }
+    
+    .scroll-sidebar-icon {
+      font-size: 12px;
+    }
+  
+    /* Modals */
+    .modal-overlay {
+      padding: 0.5rem;
+    }
+  
+    .modal-header-content {
+      padding: 1rem;
+    }
+  
+    .modal-content {
+      padding: 1rem;
+    }
+  
+    .modal-title {
+      font-size: 1.5rem;
+    }
+  
+    .modal-tech-grid {
+      gap: 0.25rem;
+    }
+  
+    .modal-tech-tag {
+      padding: 0.375rem 0.75rem;
+      font-size: 0.8rem;
+    }
+  
+    .click-hint-badge {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+    }
+  }
+  
+  /* ===== VERY SMALL MOBILE (320px and below) ===== */
+  @media (max-width: 320px) {
+    /* Skills Section */
+    .skills-section-fullscreen {
+      padding: 0.75rem 0.25rem;
+    }
+  
+    .skills-section-fullscreen .section-title {
+      font-size: 1.75rem;
+    }
+  
+    .mobile-filter-container {
+      padding: 0.5rem;
+      gap: 0.25rem;
+      justify-content: flex-start;
+      margin-bottom: 1rem;
+    }
+  
+    .mobile-filter-button {
+      padding: 0.35rem 0.5rem;
+      font-size: 0.75rem;
+      min-width: 60px;
+      justify-content: center;
+    }
+  
+    .mobile-filter-button .skills-filter-count {
+      display: none;
+    }
+  
+    .mobile-cloud-container {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      padding: 0.75rem;
+      gap: 0.4rem;
+      min-height: 180px;
+    }
+  
+    .mobile-skill-tag {
+      padding: 0.5rem 0.6rem;
+      gap: 0.35rem;
+      min-height: 50px;
+      min-width: 95px;
+    }
+  
+    .skill-tag-icon-container {
+      width: 28px;
+      height: 28px;
+      margin-bottom: 0.25rem;
+    }
+  
+    .skill-tag-icon {
+      width: 18px;
+      height: 18px;
+    }
+  
+    .skill-tag-name {
+      font-size: 0.75rem;
+      line-height: 1.1;
+    }
+  
+    .skill-fallback {
+      width: 18px;
+      height: 18px;
+      font-size: 0.7rem;
+    }
+  }
+  
+  /* ===== LARGE DESKTOP (1024px and above) ===== */
+  @media (min-width: 1024px) {
+    .scroll-sidebar-visible {
+      right: 16px;
+    }
+    
+    .scroll-sidebar-content {
+      min-width: 180px;
+      padding: 10px;
+    }
+    
+    .scroll-sidebar-item {
+      padding: 10px 12px;
+      font-size: 13px;
+    }
+  }

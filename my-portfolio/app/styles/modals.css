@@ -1,0 +1,323 @@
+/* ============================================ */
+/* MODALS & OVERLAYS */
+/* ============================================ */
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+    animation: modalFadeIn 0.3s ease-out;
+  }
+  
+  @keyframes modalFadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Modal Container */
+  .modal-container {
+    background: white;
+    border-radius: 1rem;
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    animation: modalSlideIn 0.3s ease-out;
+  }
+  
+  @keyframes modalSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  /* Modal Header */
+  .modal-header {
+    position: relative;
+    padding: 0;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .modal-header-content {
+    display: flex;
+    gap: 1.5rem;
+    padding: 2rem;
+    align-items: flex-start;
+  }
+  
+  .modal-project-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    flex-shrink: 0;
+  }
+  
+  .modal-title-section {
+    flex: 1;
+  }
+  
+  .modal-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    align-items: center;
+  }
+  
+  .modal-category {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #3b82f6;
+    background: rgba(59, 130, 246, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+  }
+  
+  .modal-status {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    text-transform: uppercase;
+  }
+  
+  .modal-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+  
+  .modal-period {
+    color: #6b7280;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  .modal-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #f3f4f6;
+    border: none;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #6b7280;
+  }
+  
+  .modal-close-btn:hover {
+    background: #e5e7eb;
+    color: #374151;
+    transform: scale(1.05);
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .modal-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #3b82f6;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+  }
+  
+  .modal-description p {
+    color: #4b5563;
+    line-height: 1.7;
+    font-size: 1rem;
+  }
+  
+  /* Modal Technologies */
+  .modal-tech-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .modal-tech-tag {
+    background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: transform 0.2s ease;
+  }
+  
+  .modal-tech-tag:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Modal Lists */
+  .modal-feature-list,
+  .modal-challenge-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .modal-feature-list li,
+  .modal-challenge-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    color: #4b5563;
+    line-height: 1.6;
+  }
+  
+  .modal-feature-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #10b981;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  
+  .modal-challenge-list li::before {
+    content: '⚡';
+    position: absolute;
+    left: 0;
+    font-size: 1rem;
+  }
+  
+  /* Modal Impact */
+  .modal-impact-text {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
+    border-left: 4px solid #3b82f6;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: #1f2937;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  
+  /* Modal Actions */
+  .modal-actions {
+    display: flex;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+  }
+  
+  .modal-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .modal-btn-primary {
+    background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  }
+  
+  .modal-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+  }
+  
+  .modal-btn-secondary {
+    background: #f8fafc;
+    color: #374151;
+    border: 2px solid #e5e7eb;
+  }
+  
+  .modal-btn-secondary:hover {
+    background: #f1f5f9;
+    border-color: #d1d5db;
+    transform: translateY(-2px);
+  }
+  
+  /* Project Status Badges */
+  .status-completed {
+    background: rgba(16, 185, 129, 0.9) !important;
+    color: white !important;
+    border-color: #10b981 !important;
+  }
+  
+  .status-in-progress {
+    background: rgba(245, 158, 11, 0.9) !important;
+    color: white !important;
+    border-color: #f59e0b !important;
+  }
+  
+  /* Click Hint Badge */
+  .click-hint-badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    background: rgba(59, 130, 246, 0.9);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 5;
+    backdrop-filter: blur(4px);
+  }
+  
+  .featured-project-card:hover .click-hint-badge {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Accessibility: Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .modal-overlay,
+    .modal-container,
+    .project-hover-overlay,
+    .project-hover-content,
+    .click-icon {
+      animation: none !important;
+      transition-duration: 0.01ms !important;
+    }
+  }

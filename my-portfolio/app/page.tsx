@@ -7,7 +7,7 @@ import AboutSection from "@/components/About";
 import ContactSection from "@/components/Contact";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import ScrollSidebar from "@/components/ScrollSidebar"; // Add this import
+import ScrollSidebar from "@/components/ScrollSidebar";
 
 // Main Portfolio Page Component
 export default function PortfolioPage() {
