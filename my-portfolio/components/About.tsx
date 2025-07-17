@@ -91,7 +91,7 @@ export default function AboutSection() {
             }`}>
               <h3 className="technologies-title">Technologies I work with:</h3>
               <p className="technologies-list">
-                JavaScript, TypeScript, React, Next.js, Node.js, Python, Java, Vue.js, Firebase
+                JavaScript, TypeScript, React, Next.js, Docker, Python, Java, Vue.js, Firebase, Kong
               </p>
             </div>
           </div>

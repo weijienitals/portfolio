@@ -1,8 +1,56 @@
-// Contact Section Component
+// Contact Section Component with Animation (Manual Implementation)
+"use client";
+import React, { useEffect, useRef, useState } from "react";
+
 const ContactSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Intersection Observer for fade effects
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          } else {
+            // Reset animation when section leaves viewport
+            setIsVisible(false);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section id="contact" className="section-container bg-white">
-      <div className="section-header">
+    <section 
+      ref={sectionRef}
+      id="contact" 
+      className={`section-container bg-white transition-all duration-1000 ease-out ${
+        isVisible 
+          ? 'opacity-100 translate-y-0' 
+          : 'opacity-0 translate-y-8'
+      }`}
+    >
+      <div className={`section-header transition-all duration-1000 ease-out delay-200 ${
+        isVisible 
+          ? 'opacity-100 translate-y-0' 
+          : 'opacity-0 translate-y-8'
+      }`}>
         <h2 className="section-title">Get In Touch</h2>
         <p className="section-subtitle">
           Ready to collaborate or discuss opportunities? I'd love to hear from
@@ -12,13 +60,17 @@ const ContactSection = () => {
 
       <div className="max-w-6xl mx-auto">
         {/* Contact Methods */}
-        <div className="grid-3 mb-12">
+        <div className={`grid-3 mb-12 transition-all duration-1000 ease-out delay-400 ${
+          isVisible 
+            ? 'opacity-100 translate-y-0' 
+            : 'opacity-0 translate-y-8'
+        }`}>
           {/* Email Card */}
           <div className="professional-card text-center">
             <div
               className="w-16 h-16 rounded-xl mx-auto mb-4 flex items-center justify-center"
               style={{
-                background: "var(--color-accent)",
+                background: "var(--color-secondary)",
                 color: "white",
               }}
             >
@@ -89,7 +141,7 @@ const ContactSection = () => {
               href="http://www.linkedin.com/in/cheanweijie"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-secondary text-sm"
+              className="btn-primary text-sm"
             >
               Connect
             </a>
@@ -133,7 +185,7 @@ const ContactSection = () => {
             <p className="text-xs mb-3" style={{ color: "var(--color-text-muted)" }}>
               Available in Singapore
             </p>
-            <a href="tel:+6583582090" className="btn-tertiary text-sm">
+            <a href="tel:+6583582090" className="btn-primary text-sm">
               Call Now
             </a>
           </div>
@@ -141,7 +193,11 @@ const ContactSection = () => {
 
         {/* Availability Status */}
         <div
-          className="professional-card text-center"
+          className={`professional-card text-center transition-all duration-1000 ease-out delay-600 ${
+            isVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-8'
+          }`}
           style={{
             background: "var(--color-surface)",
             border: "2px solid var(--color-accent)",
