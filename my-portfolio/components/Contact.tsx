@@ -182,9 +182,6 @@ const ContactSection = () => {
             >
               +65 8358 2090
             </p>
-            <p className="text-xs mb-3" style={{ color: "var(--color-text-muted)" }}>
-              Available in Singapore
-            </p>
             <a href="tel:+6583582090" className="btn-primary text-sm">
               Call Now
             </a>
