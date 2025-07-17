@@ -62,15 +62,14 @@ export default function FeaturedProjects() {
   const featuredProjects = [
     {
       title: "VolunteerConnect",
-      period: "Aug 2024 – Dec 2024",
       description: "A comprehensive web platform designed to facilitate volunteerism in Singapore, connecting volunteers with meaningful opportunities.",
       longDescription: "VolunteerConnect is a full-stack web application that bridges the gap between volunteers and nonprofit organizations in Singapore. The platform features user authentication, advanced search filters, real-time notifications, and an admin dashboard for managing volunteer opportunities.",
       technologies: ["JavaScript", "HTML", "CSS", "Vue.js", "Firebase"],
       category: "Web Development",
       status: "Completed",
       impact: "Connecting 500+ volunteers with local nonprofits",
-      github: "#",
-      demo: "#",
+      github: "https://github.com/weijienitals/VolunteerConnect",
+     
       image: "/images/volunteer.png",
       features: [
         "User authentication and profile management",
@@ -88,40 +87,35 @@ export default function FeaturedProjects() {
     },
     {
       title: "Parade Card Game",
-      period: "Jan 2025 – Mar 2025",
-      description: "A digital implementation of the classic Parade card game built with Java, showcasing advanced object-oriented programming principles.",
-      longDescription: "A comprehensive digital recreation of the popular Parade card game, featuring AI opponents, multiplayer functionality, and an intuitive GUI. The project demonstrates advanced Java concepts including design patterns, unit testing, and clean architecture.",
-      technologies: ["Java", "OOP", "Design Patterns", "JUnit", "Maven"],
+      description: "A digital implementation of the classic Parade card game built with Java, showcasing object-oriented programming principles.",
+      longDescription: "A recreation of the popular Parade card game, featuring Computer opponents, multiplayer functionality, and an intuitive GUI. The project demonstrates essential Java OOP concepts such as encapsulation, inheritance, and modular design.",
+      technologies: ["Java", "OOP"],
       category: "Game Development",
-      status: "In Progress",
+      status: "Completed",
       impact: "Demonstrating advanced Java programming skills",
-      github: "#",
+      github: "https://github.com/weijienitals/Parade_Card_Game",
       demo: "#",
       image: "images/parade.png",
       features: [
         "Complete game logic implementation",
-        "AI opponents with difficulty levels",
         "Multiplayer support for up to 6 players",
         "Score tracking and game statistics",
-        "Save/load game functionality",
-        "Comprehensive unit test coverage"
       ],
       challenges: [
-        "Implementing complex game state management",
-        "Creating intelligent AI decision algorithms",
-        "Ensuring thread-safe multiplayer functionality"
+        "Implementing game logic and management",
+        "Writing Clean Code with OOP Principles",
+        "Implementing Computer opponents for Game"
       ]
     },
     {
       title: "Food Ordering & Management System",
-      period: "Dec 2024 – Feb 2025",
-      description: "Real-time analytics dashboard for e-commerce businesses with predictive insights and automated reporting capabilities.",
-      longDescription: "A comprehensive analytics platform that processes real-time e-commerce data to provide actionable insights for business growth. Features include predictive analytics, automated reporting, and interactive data visualizations.",
-      technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Charts.js"],
-      category: "Data Analytics",
-      status: "In Progress",
+      description: "A comprehensive food ordering and management system enabling multi-vendor ordering, group payment splitting, and vendor order management",
+      longDescription: "Full-stack food ordering platform supporting single and multi-vendor orders with integrated group payment splitting functionality and comprehensive vendor management tools.",
+      technologies: ["Python", "Vue.js", "Flask", "Docker","Kong"],
+      category: "Fullstack Development",
+      status: "Completed",
       impact: "Helping businesses increase revenue by 25%",
-      github: "#",
+      github: "https://github.com/weijienitals/ESD-PROJ",
       demo: "#",
       image: "images/foodordering2.png",
       features: [

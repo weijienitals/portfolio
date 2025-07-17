@@ -276,7 +276,20 @@ p {
   -webkit-backdrop-filter: blur(8px);
 }
 
-/* Featured Project Content */
+
+
+
+
+
+
+/* CSS that makes featured project card text fully visible (START)*/
+
+
+
+
+
+/* Featured Project Content
+
 .featured-project-content {
   padding: var(--spacing-sm, 0.75rem);
 }
@@ -318,6 +331,16 @@ p {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+ */
+
+
+
+
+
+
+/* CSS that makes featured project card text fully visible (END)
+
+
 
 
 
@@ -1705,7 +1728,7 @@ p {
 
 
 
-/* Cloud-Only Skills CSS - Add to your globals.css */
+/* Cloud-Only Skills CSS - Add to your globals.css  (START) */
 
 /* Full Viewport Skills Section */
 .skills-section-fullscreen {
@@ -2218,6 +2241,15 @@ p {
     transition: none;
   }
 }
+
+
+
+
+/* Cloud-Only Skills CSS - Add to your globals.css  (End) */
+
+
+
+
 
 
 
