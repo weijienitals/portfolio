@@ -1,0 +1,654 @@
+/* ============================================ */
+/* EXPERIENCE SECTION - MODERN THEME STYLING */
+/* ============================================ */
+
+/* Tab Navigation */
+.tab-navigation {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+  
+  .tab-container {
+    display: flex;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e2e8f0;
+    gap: 4px;
+  }
+  
+  .tab-button {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    min-width: 160px;
+    justify-content: center;
+  }
+  
+  .tab-button:hover {
+    background: #f8fafc;
+    color: #475569;
+    transform: translateY(-1px);
+  }
+  
+  .tab-active {
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%) !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
+    transform: translateY(-2px) !important;
+  }
+  
+  .tab-active:hover {
+    background: linear-gradient(135deg, #1d4ed8 0%, #7c3aed 100%) !important;
+  }
+  
+  .tab-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .tab-active .tab-icon {
+    transform: scale(1.1);
+  }
+  
+  .tab-label {
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  
+  .tab-content {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* ============================================ */
+  /* EXPERIENCE CARDS */
+  /* ============================================ */
+  
+  .experience-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .experience-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: #3b82f6;
+  }
+  
+  .experience-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  }
+  
+  /* Experience Header */
+  .experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    gap: 2rem;
+  }
+  
+  .experience-title-section {
+    flex: 1;
+  }
+  
+  .experience-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.3;
+  }
+  
+  .experience-company {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #3b82f6;
+    margin: 0 0 0.25rem 0;
+  }
+  
+  .experience-course {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin: 0 0 0.75rem 0;
+    font-style: italic;
+  }
+  
+  .experience-type-badge {
+    display: inline-block;
+    padding: 0.375rem 0.875rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .experience-type-badge.internship {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+  }
+  
+  .experience-type-badge.academic {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: white;
+  }
+  
+  .experience-type-badge.leadership {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+  }
+  
+  .experience-period {
+    text-align: right;
+    font-weight: 600;
+    color: #64748b;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+  
+  /* Experience Content */
+  .experience-description {
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+  }
+  
+  .experience-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .experience-section {
+    margin-bottom: 1.5rem;
+  }
+  
+  .experience-section-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f1f5f9;
+    position: relative;
+  }
+  
+  .experience-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  }
+  
+  /* Experience Lists */
+  .experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .experience-list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    color: #4b5563;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+  
+  .experience-bullet {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #3b82f6;
+    flex-shrink: 0;
+    margin-top: 0.5rem;
+  }
+  
+  .experience-list-item.achievement .achievement-bullet {
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    margin-top: 0.4rem;
+  }
+  
+  /* Technology Tags */
+  .experience-tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .experience-tech-tag {
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    color: #475569;
+    padding: 0.375rem 0.875rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+  }
+  
+  .experience-tech-tag:hover {
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+  }
+  
+  /* ============================================ */
+  /* EDUCATION SPECIFIC STYLES */
+  /* ============================================ */
+  
+  .education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    gap: 2rem;
+  }
+  
+  .education-main-info {
+    flex: 1;
+  }
+  
+  .education-university {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+  }
+  
+  .education-degree {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #3b82f6;
+    margin: 0 0 1rem 0;
+  }
+  
+  .education-majors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .education-major-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 2px solid;
+  }
+  
+  .education-major-badge.primary {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: white;
+    border-color: transparent;
+  }
+  
+  .education-major-badge.secondary {
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+    color: white;
+    border-color: transparent;
+  }
+  
+  .education-details {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .education-status-badge {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    align-self: flex-end;
+  }
+  
+  .education-period {
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 0.95rem;
+  }
+  
+  .education-location {
+    color: #64748b;
+    font-size: 0.9rem;
+  }
+  
+  .education-technical-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #f1f5f9;
+  }
+  
+  .technical-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .technical-category {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .technical-category-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  /* Activities & Leadership */
+  .activities-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .activities-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .activity-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 1.5rem;
+    border-left: 4px solid;
+    border-left-color: #3b82f6;
+    transition: all 0.3s ease;
+  }
+  
+  .activity-card:hover {
+    transform: translateX(4px);
+    box-shadow: 0 8px 16px rgba(59, 130, 246, 0.15);
+    border-left-color: #8b5cf6;
+  }
+  
+  .activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    gap: 1rem;
+  }
+  
+  .activity-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0 0 0.25rem 0;
+  }
+  
+  .activity-organization {
+    color: #3b82f6;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  
+  .activity-type-badge {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 16px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .activity-period {
+    font-weight: 600;
+    color: #64748b;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+  
+  .activity-description {
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+  
+  /* ============================================ */
+  /* CERTIFICATIONS STYLES */
+  /* ============================================ */
+  
+  .certification-coming-soon {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  }
+  
+  .certification-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem auto;
+    box-shadow: 0 8px 16px rgba(245, 158, 11, 0.3);
+  }
+  
+  .certification-icon span {
+    font-size: 2rem;
+    color: white;
+  }
+  
+  .certification-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1rem;
+  }
+  
+  .certification-description {
+    color: #64748b;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .certification-status {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .certification-status-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: left;
+  }
+  
+  .certification-status-label {
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 0.9rem;
+  }
+  
+  .certification-status-text {
+    color: #64748b;
+    font-size: 0.95rem;
+  }
+  
+  /* ============================================ */
+  /* RESPONSIVE DESIGN */
+  /* ============================================ */
+  
+  @media (max-width: 1024px) {
+    .experience-content-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  
+    .technical-categories {
+      gap: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .tab-container {
+      flex-direction: column;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  
+    .tab-button {
+      min-width: auto;
+      padding: 0.875rem 1rem;
+      justify-content: flex-start;
+    }
+  
+    .experience-card {
+      padding: 1.5rem;
+    }
+  
+    .experience-header {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .experience-period {
+      text-align: left;
+    }
+  
+    .education-header {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .education-details {
+      text-align: left;
+    }
+  
+    .education-status-badge {
+      align-self: flex-start;
+    }
+  
+    .education-majors {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  
+    .activity-header {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+  
+    .activity-period {
+      align-self: flex-start;
+    }
+  
+    .certification-coming-soon {
+      padding: 2rem 1rem;
+    }
+  
+    .certification-icon {
+      width: 64px;
+      height: 64px;
+    }
+  
+    .certification-icon span {
+      font-size: 1.5rem;
+    }
+  
+    .certification-title {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .experience-tech-tags {
+      gap: 0.375rem;
+    }
+  
+    .experience-tech-tag {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.625rem;
+    }
+  
+    .education-majors {
+      gap: 0.375rem;
+    }
+  
+    .experience-title {
+      font-size: 1.25rem;
+    }
+  
+    .education-university {
+      font-size: 1.5rem;
+    }
+  }

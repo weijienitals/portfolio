@@ -346,7 +346,7 @@ export default function FeaturedProjects() {
           ))}
         </div>
         
-        {/* <div className={`featured-projects-cta transition-all duration-1000 ease-out delay-1000 ${
+        <div className={`featured-projects-cta transition-all duration-1000 ease-out delay-1000 ${
           isVisible 
             ? 'opacity-100 translate-y-0' 
             : 'opacity-0 translate-y-8'
@@ -360,7 +360,7 @@ export default function FeaturedProjects() {
           <p className="featured-projects-cta-text">
             Explore all my projects with filtering and detailed information
           </p>
-        </div> */}
+        </div>
       </section>
 
       <ProjectModal />

@@ -40,15 +40,34 @@ export default function Experience() {
       description: "Assisted in delivering comprehensive data management education while supporting student learning through hands-on guidance and curriculum development.",
       responsibilities: [
         "Assisted course instructor in developing teaching materials and delivering content on data management principles",
-        "Supported students in mastering tools like SQL through one-on-one guidance during tutorials",
-        "Addressed student queries and clarified complex concepts to enhance understanding",
-        "Fostered collaborative learning environment and enhanced student engagement"
+        "Provided one-on-one guidance during tutorials, addressing student queries and clarifying concepts",
+        "Supported students in mastering tools like SQL through hands-on practice sessions",
+        "Fostered collaborative learning environment that enhanced student engagement and understanding"
       ],
-      technologies: ["SQL", "Data Management", "Teaching", "Curriculum Development"],
+      technologies: ["SQL", "Database Management", "Teaching", "Curriculum Development"],
       achievements: [
-        "Enhanced student engagement and understanding through personalized guidance",
-        "Contributed to improved course delivery and student outcomes",
-        "Developed strong communication and mentoring skills"
+        "Enhanced student engagement through personalized guidance",
+        "Contributed to improved course completion rates",
+        "Developed innovative teaching methods for complex concepts"
+      ]
+    },
+    {
+      title: "SMU Basketball Events Director",
+      company: "Singapore Management University",
+      period: "Aug 2023 – May 2024",
+      type: "Leadership",
+      description: "Led the organization of large-scale sporting events while managing team operations and enhancing the club's visibility and reputation.",
+      responsibilities: [
+        "Spearheaded organization of large-scale events including 3x3 Basketball Tournament",
+        "Managed event logistics, coordination, and execution from planning to completion",
+        "Led initiatives that significantly improved the club's class ranking and performance",
+        "Coordinated with sponsors and stakeholders to secure funding and partnerships"
+      ],
+      technologies: ["Event Management", "Leadership", "Project Coordination", "Stakeholder Management"],
+      achievements: [
+        "Boosted club's visibility and reputation significantly",
+        "Secured increased sponsorship opportunities and additional funding",
+        "Successfully organized tournament that enhanced club's competitive standing"
       ]
     }
   ];
@@ -60,108 +79,102 @@ export default function Experience() {
     secondMajor: "Artificial Intelligence",
     period: "Aug 2023 – May 2027",
     location: "Singapore",
-    status: "In Progress",
+    status: "Currently Pursuing",
     experiences: [
-      "SMU Lit Hackathon - Participated in innovative literature-technology hackathon",
-      "Ellipsis #Code Hackathon - Developed cutting-edge solutions in coding competition"
+      "SMU Lit Hackathon - Participated in literary-themed hackathon developing innovative tech solutions",
+      "Ellipsis #Code Hackathon - Competed in coding challenges and developed creative software solutions"
     ],
     activities: [
       {
         title: "SMU Basketball Events Director",
         organization: "Singapore Management University",
+        type: "Leadership Position",
         period: "Aug 2023 – May 2024",
-        type: "Leadership Role",
-        description: "Led event organization and significantly improved club performance and visibility.",
+        description: "Led event organization and team management for university basketball activities, significantly improving club performance and visibility.",
         achievements: [
-          "Spearheaded large-scale events including 3x3 Basketball Tournament",
-          "Significantly improved club's class ranking through strategic event planning",
-          "Boosted club visibility and reputation, securing additional sponsorship opportunities"
+          "Spearheaded organization of large-scale sporting events",
+          "Improved club's competitive ranking through strategic initiatives",
+          "Secured increased sponsorship opportunities and funding"
         ]
       },
       {
         title: "Data Science & Analytics Society Events Director",
         organization: "Singapore Management University",
-        period: "Aug 2023 – Present",
-        type: "Leadership Role",
-        description: "Organized educational events and workshops to enhance data science learning opportunities.",
+        type: "Leadership Position",
+        period: "Aug 2023 – May 2024",
+        description: "Organized workshops, seminars, and networking events for the data science community, fostering learning and professional development.",
         achievements: [
-          "Increased society membership and engagement through innovative events",
-          "Established partnerships with leading tech companies",
-          "Enhanced data science learning opportunities for students"
+          "Organized technical workshops and industry seminars",
+          "Built networking opportunities for students and professionals",
+          "Enhanced society's reputation and member engagement"
         ]
       },
       {
         title: "SMU Youth Mentors",
         organization: "Singapore Management University",
-        period: "Aug 2023 – Present",
         type: "Mentorship Program",
-        description: "Provided guidance and support to fellow students in academic and personal development.",
+        period: "Aug 2023 – Present",
+        description: "Provided guidance and support to fellow students in academic and personal development, fostering a collaborative learning environment.",
         achievements: [
-          "Successfully mentored multiple students to academic improvement",
-          "Contributed to positive campus community building",
-          "Developed strong interpersonal and communication skills"
+          "Mentored multiple students in academic and personal growth",
+          "Contributed to improved student retention and satisfaction",
+          "Developed strong leadership and communication skills"
         ]
       }
     ]
   };
 
   const WorkExperienceTab = () => (
-    <div className="space-y-12">
+    <div className="space-y-8">
       {workExperiences.map((exp, index) => (
-        <div key={index} className="professional-card">
-          <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-4">
-            <div className="flex-1">
-              <div className="flex items-center gap-3 mb-2">
-                <h3 className="text-xl font-semibold" style={{ color: 'var(--color-text-primary)' }}>{exp.title}</h3>
-                <span className="professional-tag primary">
-                  {exp.type}
-                </span>
-              </div>
-              <h4 className="text-lg font-medium mb-1" style={{ color: 'var(--color-text-secondary)' }}>{exp.company}</h4>
-              {exp.course && (
-                <p className="mb-2 italic" style={{ color: 'var(--color-text-muted)' }}>{exp.course}</p>
-              )}
-            </div>
-            <div className="lg:text-right mt-2 lg:mt-0">
-              <span className="professional-tag">
-                {exp.period}
+        <div key={index} className="experience-card">
+          <div className="experience-header">
+            <div className="experience-title-section">
+              <h3 className="experience-title">{exp.title}</h3>
+              <h4 className="experience-company">{exp.company}</h4>
+              {exp.course && <p className="experience-course">{exp.course}</p>}
+              <span className={`experience-type-badge ${exp.type.toLowerCase()}`}>
+                {exp.type}
               </span>
             </div>
+            <div className="experience-period">
+              <span>{exp.period}</span>
+            </div>
           </div>
-          
-          <p className="mb-6" style={{ color: 'var(--color-text-secondary)' }}>{exp.description}</p>
-          
-          <div className="grid-2 mb-6">
-            <div>
-              <h5 className="font-semibold mb-3" style={{ color: 'var(--color-text-primary)' }}>Key Responsibilities</h5>
-              <div className="space-y-2">
-                {exp.responsibilities.map((resp, i) => (
-                  <div key={i} className="flex items-start">
-                    <span className="w-1.5 h-1.5 rounded-full mt-2 mr-3 flex-shrink-0" style={{ background: 'var(--color-accent)' }}></span>
-                    <span className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>{resp}</span>
+
+          <p className="experience-description">{exp.description}</p>
+
+          <div className="experience-content-grid">
+            <div className="experience-section">
+              <h5 className="experience-section-title">Key Responsibilities</h5>
+              <div className="experience-list">
+                {exp.responsibilities.map((responsibility, i) => (
+                  <div key={i} className="experience-list-item">
+                    <div className="experience-bullet"></div>
+                    <span>{responsibility}</span>
                   </div>
                 ))}
               </div>
             </div>
-            
-            <div>
-              <h5 className="font-semibold mb-3" style={{ color: 'var(--color-text-primary)' }}>Key Achievements</h5>
-              <div className="space-y-2">
+
+            <div className="experience-section">
+              <h5 className="experience-section-title">Key Achievements</h5>
+              <div className="experience-list">
                 {exp.achievements.map((achievement, i) => (
-                  <div key={i} className="flex items-start">
-                    <span className="w-1.5 h-1.5 rounded-full mt-2 mr-3 flex-shrink-0" style={{ background: '#27ae60' }}></span>
-                    <span className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>{achievement}</span>
+                  <div key={i} className="experience-list-item achievement">
+                    <div className="achievement-bullet"></div>
+                    <span>{achievement}</span>
                   </div>
                 ))}
               </div>
             </div>
           </div>
           
-          <div>
-            <h5 className="font-semibold mb-3" style={{ color: 'var(--color-text-primary)' }}>Technologies Used</h5>
-            <div className="flex flex-wrap gap-2">
+          <div className="experience-section">
+            <h5 className="experience-section-title">Technologies Used</h5>
+            <div className="experience-tech-tags">
               {exp.technologies.map((tech, i) => (
-                <span key={i} className="professional-tag">
+                <span key={i} className="experience-tech-tag">
                   {tech}
                 </span>
               ))}
@@ -173,59 +186,59 @@ export default function Experience() {
   );
 
   const EducationTab = () => (
-    <div className="space-y-12">
+    <div className="space-y-8">
       {/* Main Education Card */}
-      <div className="professional-card">
-        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-4">
-          <div>
-            <h3 className="text-2xl font-semibold mb-2" style={{ color: 'var(--color-text-primary)' }}>{education.university}</h3>
-            <h4 className="text-xl font-medium mb-1" style={{ color: 'var(--color-text-secondary)' }}>{education.degree}</h4>
-            <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-3">
-              <span className="professional-tag primary">
+      <div className="experience-card">
+        <div className="education-header">
+          <div className="education-main-info">
+            <h3 className="education-university">{education.university}</h3>
+            <h4 className="education-degree">{education.degree}</h4>
+            <div className="education-majors">
+              <span className="education-major-badge primary">
                 Major: {education.major}
               </span>
-              <span className="professional-tag primary">
+              <span className="education-major-badge secondary">
                 2nd Major: {education.secondMajor}
               </span>
             </div>
           </div>
-          <div className="lg:text-right">
-            <span className="professional-tag completed mb-2">
+          <div className="education-details">
+            <span className="education-status-badge">
               {education.status}
             </span>
-            <p className="font-medium" style={{ color: 'var(--color-text-secondary)' }}>{education.period}</p>
-            <p className="text-sm" style={{ color: 'var(--color-text-muted)' }}>{education.location}</p>
+            <p className="education-period">{education.period}</p>
+            <p className="education-location">{education.location}</p>
           </div>
         </div>
 
-        <div>
-          <h5 className="font-semibold mb-3" style={{ color: 'var(--color-text-primary)' }}>Relevant Experiences</h5>
-          <div className="space-y-2">
+        <div className="experience-section">
+          <h5 className="experience-section-title">Relevant Experiences</h5>
+          <div className="experience-list">
             {education.experiences.map((exp, i) => (
-              <div key={i} className="flex items-start">
-                <span className="w-1.5 h-1.5 rounded-full mt-2 mr-3 flex-shrink-0" style={{ background: 'var(--color-accent)' }}></span>
-                <span className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>{exp}</span>
+              <div key={i} className="experience-list-item">
+                <div className="experience-bullet"></div>
+                <span>{exp}</span>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="mt-6">
-          <h5 className="font-semibold mb-3" style={{ color: 'var(--color-text-primary)' }}>Technical Proficiencies</h5>
-          <div className="space-y-4">
-            <div>
-              <h6 className="text-sm font-semibold mb-2" style={{ color: 'var(--color-text-secondary)' }}>Programming Languages</h6>
-              <div className="flex flex-wrap gap-2">
+        <div className="education-technical-section">
+          <h5 className="experience-section-title">Technical Proficiencies</h5>
+          <div className="technical-categories">
+            <div className="technical-category">
+              <h6 className="technical-category-title">Programming Languages</h6>
+              <div className="experience-tech-tags">
                 {['SQL', 'Python', 'Java', 'JavaScript', 'CSS', 'HTML', 'PHP', 'Vue.js'].map((lang, i) => (
-                  <span key={i} className="professional-tag">{lang}</span>
+                  <span key={i} className="experience-tech-tag">{lang}</span>
                 ))}
               </div>
             </div>
-            <div>
-              <h6 className="text-sm font-semibold mb-2" style={{ color: 'var(--color-text-secondary)' }}>Tools & Libraries</h6>
-              <div className="flex flex-wrap gap-2">
+            <div className="technical-category">
+              <h6 className="technical-category-title">Tools & Libraries</h6>
+              <div className="experience-tech-tags">
                 {['NumPy', 'Pandas', 'Docker', 'Git', 'Figma', 'Firebase', 'Azure', 'Spring Boot'].map((tool, i) => (
-                  <span key={i} className="professional-tag">{tool}</span>
+                  <span key={i} className="experience-tech-tag">{tool}</span>
                 ))}
               </div>
             </div>
@@ -234,29 +247,29 @@ export default function Experience() {
       </div>
 
       {/* Activities & Leadership */}
-      <div className="professional-card">
-        <h3 className="text-lg font-semibold mb-6" style={{ color: 'var(--color-text-primary)' }}>Activities & Leadership</h3>
-        <div className="space-y-8">
+      <div className="experience-card">
+        <h3 className="activities-title">Activities & Leadership</h3>
+        <div className="activities-grid">
           {education.activities.map((activity, index) => (
-            <div key={index} className="border-l-4 pl-6" style={{ borderColor: 'var(--color-accent)' }}>
-              <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-3">
+            <div key={index} className="activity-card">
+              <div className="activity-header">
                 <div>
-                  <h4 className="font-semibold text-lg" style={{ color: 'var(--color-text-primary)' }}>{activity.title}</h4>
-                  <p className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>{activity.organization}</p>
-                  <span className="professional-tag completed text-xs">
+                  <h4 className="activity-title">{activity.title}</h4>
+                  <p className="activity-organization">{activity.organization}</p>
+                  <span className="activity-type-badge">
                     {activity.type}
                   </span>
                 </div>
-                <span className="text-sm font-medium" style={{ color: 'var(--color-text-muted)' }}>{activity.period}</span>
+                <span className="activity-period">{activity.period}</span>
               </div>
               
-              <p className="text-sm mb-3" style={{ color: 'var(--color-text-secondary)' }}>{activity.description}</p>
+              <p className="activity-description">{activity.description}</p>
               
-              <div className="space-y-1">
+              <div className="experience-list">
                 {activity.achievements.map((achievement, i) => (
-                  <div key={i} className="flex items-start">
-                    <span className="w-1.5 h-1.5 rounded-full mt-1.5 mr-3 flex-shrink-0" style={{ background: '#27ae60' }}></span>
-                    <span className="text-xs" style={{ color: 'var(--color-text-secondary)' }}>{achievement}</span>
+                  <div key={i} className="experience-list-item achievement">
+                    <div className="achievement-bullet"></div>
+                    <span>{achievement}</span>
                   </div>
                 ))}
               </div>
@@ -268,26 +281,21 @@ export default function Experience() {
   );
 
   const CertificationsTab = () => (
-    <div className="space-y-12">
-      <div className="professional-card text-center">
-        <div className="w-20 h-20 rounded-xl flex items-center justify-center mx-auto mb-6" style={{ 
-          background: 'linear-gradient(135deg, #f39c12, #e67e22)',
-          boxShadow: 'var(--color-shadow)'
-        }}>
-          <span className="text-2xl text-white">⭐</span>
+    <div className="space-y-8">
+      <div className="experience-card certification-coming-soon">
+        <div className="certification-icon">
+          <span>⭐</span>
         </div>
-        <h3 className="text-2xl font-semibold mb-4" style={{ color: 'var(--color-text-primary)' }}>Professional Development</h3>
-        <p className="mb-6" style={{ color: 'var(--color-text-secondary)' }}>
+        <h3 className="certification-title">Professional Development</h3>
+        <p className="certification-description">
           Currently pursuing additional certifications to enhance technical expertise and professional capabilities.
           Stay tuned for updates on upcoming achievements!
         </p>
-        <div className="p-4 rounded border" style={{ 
-          background: 'var(--color-surface)',
-          borderColor: 'var(--color-border-light)'
-        }}>
-          <p className="text-sm" style={{ color: 'var(--color-text-secondary)' }}>
-            <span className="font-semibold">Status:</span> Actively working on professional certifications in 2025
-          </p>
+        <div className="certification-status">
+          <div className="certification-status-content">
+            <span className="certification-status-label">Status:</span>
+            <span className="certification-status-text">Actively working on professional certifications in 2025</span>
+          </div>
         </div>
       </div>
     </div>
@@ -304,31 +312,24 @@ export default function Experience() {
       </div>
       
       <div className="max-w-6xl mx-auto">
-        {/* Simple Tab Navigation */}
-        <div className="flex justify-center mb-8">
-          <div className="flex bg-white rounded-lg shadow-sm border border-gray-200">
+        {/* Modern Tab Navigation */}
+        <div className="tab-navigation">
+          <div className="tab-container">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-8 py-4 font-medium ${
-                  activeTab === tab.id
-                    ? 'bg-gray-600 text-white'
-                    : 'bg-white text-gray-600'
-                }`}
-                style={{
-                  borderRadius: activeTab === tab.id ? '6px' : '0'
-                }}
+                className={`tab-button ${activeTab === tab.id ? 'tab-active' : ''}`}
               >
-                <span className="mr-2">{tab.icon}</span>
-                {tab.label}
+                <span className="tab-icon">{tab.icon}</span>
+                <span className="tab-label">{tab.label}</span>
               </button>
             ))}
           </div>
         </div>
 
         {/* Tab Content */}
-        <div>
+        <div className="tab-content">
           {activeTab === 'work' && <WorkExperienceTab />}
           {activeTab === 'education' && <EducationTab />}
           {activeTab === 'certifications' && <CertificationsTab />}
