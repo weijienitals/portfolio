@@ -8,7 +8,7 @@ export default function Experience() {
   const tabs = [
     { id: 'work', label: 'Work Experience', icon: '💼' },
     { id: 'education', label: 'Education', icon: '🎓' },
-    { id: 'certifications', label: 'Certifications', icon: '⭐' }
+    // { id: 'certifications', label: 'Certifications', icon: '⭐' }
   ];
 
   const workExperiences = [
@@ -51,25 +51,6 @@ export default function Experience() {
         "Developed innovative teaching methods for complex concepts"
       ]
     },
-    {
-      title: "SMU Basketball Events Director",
-      company: "Singapore Management University",
-      period: "Aug 2023 – May 2024",
-      type: "Leadership",
-      description: "Led the organization of large-scale sporting events while managing team operations and enhancing the club's visibility and reputation.",
-      responsibilities: [
-        "Spearheaded organization of large-scale events including 3x3 Basketball Tournament",
-        "Managed event logistics, coordination, and execution from planning to completion",
-        "Led initiatives that significantly improved the club's class ranking and performance",
-        "Coordinated with sponsors and stakeholders to secure funding and partnerships"
-      ],
-      technologies: ["Event Management", "Leadership", "Project Coordination", "Stakeholder Management"],
-      achievements: [
-        "Boosted club's visibility and reputation significantly",
-        "Secured increased sponsorship opportunities and additional funding",
-        "Successfully organized tournament that enhanced club's competitive standing"
-      ]
-    }
   ];
 
   const education = {
@@ -280,26 +261,26 @@ export default function Experience() {
     </div>
   );
 
-  const CertificationsTab = () => (
-    <div className="space-y-8">
-      <div className="experience-card certification-coming-soon">
-        <div className="certification-icon">
-          <span>⭐</span>
-        </div>
-        <h3 className="certification-title">Professional Development</h3>
-        <p className="certification-description">
-          Currently pursuing additional certifications to enhance technical expertise and professional capabilities.
-          Stay tuned for updates on upcoming achievements!
-        </p>
-        <div className="certification-status">
-          <div className="certification-status-content">
-            <span className="certification-status-label">Status:</span>
-            <span className="certification-status-text">Actively working on professional certifications in 2025</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+  // const CertificationsTab = () => (
+  //   <div className="space-y-8">
+  //     <div className="experience-card certification-coming-soon">
+  //       <div className="certification-icon">
+  //         <span>⭐</span>
+  //       </div>
+  //       <h3 className="certification-title">Professional Development</h3>
+  //       <p className="certification-description">
+  //         Currently pursuing additional certifications to enhance technical expertise and professional capabilities.
+  //         Stay tuned for updates on upcoming achievements!
+  //       </p>
+  //       <div className="certification-status">
+  //         <div className="certification-status-content">
+  //           <span className="certification-status-label">Status:</span>
+  //           <span className="certification-status-text">Actively working on professional certifications in 2025</span>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   </div>
+  // );
 
   return (
     <section className="section-container bg-gray-50">
@@ -332,7 +313,7 @@ export default function Experience() {
         <div className="tab-content">
           {activeTab === 'work' && <WorkExperienceTab />}
           {activeTab === 'education' && <EducationTab />}
-          {activeTab === 'certifications' && <CertificationsTab />}
+          {/* {activeTab === 'certifications' && <CertificationsTab />} */}
         </div>
       </div>
     </section>

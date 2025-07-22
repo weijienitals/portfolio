@@ -50,17 +50,15 @@ export default function ProjectsPage() {
 
   const allProjects = [
     {
-      title: "VolunteerConnect",
-      period: "Aug 2024 – Dec 2024",
+      title: "Portfolio Website",
       description: "A comprehensive web platform designed to facilitate volunteerism in Singapore, connecting volunteers with meaningful opportunities.",
       longDescription: "VolunteerConnect is a full-stack web application that bridges the gap between volunteers and nonprofit organizations in Singapore. The platform features user authentication, advanced search filters, real-time notifications, and an admin dashboard for managing volunteer opportunities.",
-      technologies: ["JavaScript", "HTML", "CSS", "Vue.js", "Firebase"],
+      technologies: ["JavaScript", "HTML", "CSS", "Next.js", "TypeScript","React","Tailwind CSS"],
       category: "Web Development",
       status: "Completed",
-      impact: "Connecting 500+ volunteers with local nonprofits",
       github: "https://github.com/weijienitals/VolunteerConnect",
       demo: "#",
-      image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      image: "/images/portfolio.png",
       features: [
         "User authentication and profile management",
         "Advanced search and filtering system",
@@ -77,17 +75,15 @@ export default function ProjectsPage() {
       featured: true
     },
     {
-      title: "Parade Card Game",
-      period: "Jan 2025 – Mar 2025",
+      title: "LateMate",
       description: "A digital implementation of the classic Parade card game built with Java, showcasing advanced object-oriented programming principles.",
       longDescription: "A recreation of the popular Parade card game, featuring Computer opponents, multiplayer functionality, and an intuitive GUI. The project demonstrates essential Java OOP concepts such as encapsulation, inheritance, and modular design.",
       technologies: ["Java", "OOP", "Design Patterns", "JUnit", "Maven"],
-      category: "Game Development",
-      status: "In Progress",
-      impact: "Demonstrating advanced Java programming skills",
+      category: "UI/UX",
+      status: "Completed",
       github: "https://github.com/weijienitals/Parade_Card_Game",
-      demo: "#",
-      image: "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      demo: "https://www.figma.com/proto/f4mIMmDvcGxxJsWiIVYXes/IDP-G7T3?node-id=307-816&starting-point-node-id=307%3A816&t=RDjux8mOG4TGcNAJ-1",
+      image: "/images/latemate.png",
       features: [
         "Complete game logic implementation",
         "Multiplayer support for up to 6 players",
@@ -102,141 +98,33 @@ export default function ProjectsPage() {
       ],
       featured: true
     },
-    {
-      title: "Food Ordering & Management System",
-      period: "Dec 2024 – Feb 2025",
-      description: "A comprehensive food ordering and management system enabling multi-vendor ordering, group payment splitting, and vendor order management.",
-      longDescription: "Full-stack food ordering platform supporting single and multi-vendor orders with integrated group payment splitting functionality and comprehensive vendor management tools.",
-      technologies: ["Python", "Vue.js", "Flask", "Docker", "Kong"],
-      category: "Fullstack Development",
-      status: "Completed",
-      impact: "Helping businesses increase revenue by 25%",
-      github: "https://github.com/weijienitals/ESD-PROJ",
-      demo: "#",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      features: [
-        "Multi-vendor food ordering system",
-        "Group payment splitting functionality",
-        "Real-time order tracking and updates",
-        "Vendor management dashboard",
-        "Integration with payment gateways",
-        "Mobile-responsive design"
-      ],
-      challenges: [
-        "Implementing complex payment splitting algorithms",
-        "Managing multiple vendor integrations",
-        "Ensuring real-time synchronization across services"
-      ],
-      featured: true
-    },
-    {
-      title: "Personal Finance Tracker",
-      period: "Sep 2024 – Nov 2024",
-      description: "Mobile-first personal finance application with budget tracking, expense categorization, and savings goals.",
-      longDescription: "Developed a comprehensive personal finance management application with intelligent categorization, budget alerts, and financial goal tracking to help users manage their money effectively.",
-      technologies: ["React Native", "Node.js", "MongoDB", "Express"],
-      category: "Mobile Development",
-      status: "Completed",
-      impact: "Helping users save 20% more on average",
-      github: "#",
-      demo: "#",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      features: [
-        "Expense tracking and categorization",
-        "Budget planning and alerts",
-        "Savings goals management",
-        "Financial insights and reports",
-        "Bank account integration",
-        "Cross-platform mobile support"
-      ],
-      challenges: [
-        "Implementing secure financial data handling",
-        "Creating intuitive mobile user experience",
-        "Integrating with banking APIs"
-      ],
-      featured: false
-    },
-    {
-      title: "University Course Scheduler",
-      period: "Jun 2024 – Aug 2024",
-      description: "Automated course scheduling system using optimization algorithms to minimize conflicts and maximize preferences.",
-      longDescription: "Created an intelligent scheduling system that uses advanced algorithms to automatically generate optimal course schedules based on student preferences and constraints, reducing manual scheduling overhead.",
-      technologies: ["Python", "Django", "SQLite", "Bootstrap"],
-      category: "Web Development",
-      status: "Completed",
-      impact: "Reduced scheduling conflicts by 80%",
-      github: "#",
-      demo: "#",
-      image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      features: [
-        "Automated schedule generation",
-        "Conflict detection and resolution",
-        "Student preference optimization",
-        "Real-time schedule updates",
-        "Course capacity management",
-        "Export to calendar applications"
-      ],
-      challenges: [
-        "Developing efficient optimization algorithms",
-        "Handling complex scheduling constraints",
-        "Creating scalable database architecture"
-      ],
-      featured: false
-    },
-    {
-      title: "Stock Market Predictor",
-      period: "Mar 2024 – May 2024",
-      description: "Machine learning model to predict stock prices using historical data and sentiment analysis from news articles.",
-      longDescription: "Developed a sophisticated machine learning pipeline that combines technical analysis with natural language processing to predict stock market movements with high accuracy.",
-      technologies: ["Python", "TensorFlow", "Pandas", "BeautifulSoup", "Flask"],
-      category: "Machine Learning",
-      status: "Completed",
-      impact: "Achieved 78% accuracy in price direction prediction",
-      github: "#",
-      demo: "#",
-      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      features: [
-        "Historical data analysis and visualization",
-        "News sentiment analysis integration",
-        "Multiple machine learning models",
-        "Real-time prediction dashboard",
-        "Risk assessment metrics",
-        "Portfolio optimization suggestions"
-      ],
-      challenges: [
-        "Processing large volumes of financial data",
-        "Implementing accurate sentiment analysis",
-        "Building robust prediction models"
-      ],
-      featured: false
-    },
-    {
-      title: "Smart Home IoT System",
-      period: "Jan 2024 – Mar 2024",
-      description: "Internet of Things system for home automation with mobile app control and voice commands integration.",
-      longDescription: "Built a comprehensive IoT ecosystem that allows users to control and monitor their home devices remotely through a mobile application with voice command support and automated scheduling.",
-      technologies: ["Arduino", "Raspberry Pi", "React Native", "Firebase", "Alexa SDK"],
-      category: "IoT Development",
-      status: "Completed",
-      impact: "Reduced energy consumption by 30%",
-      github: "#",
-      demo: "#",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-      features: [
-        "Voice-controlled device management",
-        "Mobile app for remote control",
-        "Automated scheduling and scenes",
-        "Energy consumption monitoring",
-        "Security camera integration",
-        "Real-time notifications and alerts"
-      ],
-      challenges: [
-        "Integrating multiple IoT protocols",
-        "Ensuring reliable device communication",
-        "Implementing secure remote access"
-      ],
-      featured: false
-    }
+    // {
+    //   title: "Food Ordering & Management System",
+    //   period: "Dec 2024 – Feb 2025",
+    //   description: "A comprehensive food ordering and management system enabling multi-vendor ordering, group payment splitting, and vendor order management.",
+    //   longDescription: "Full-stack food ordering platform supporting single and multi-vendor orders with integrated group payment splitting functionality and comprehensive vendor management tools.",
+    //   technologies: ["Python", "Vue.js", "Flask", "Docker", "Kong"],
+    //   category: "Fullstack Development",
+    //   status: "Completed",
+    //   impact: "Helping businesses increase revenue by 25%",
+    //   github: "https://github.com/weijienitals/ESD-PROJ",
+    //   demo: "#",
+    //   image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    //   features: [
+    //     "Multi-vendor food ordering system",
+    //     "Group payment splitting functionality",
+    //     "Real-time order tracking and updates",
+    //     "Vendor management dashboard",
+    //     "Integration with payment gateways",
+    //     "Mobile-responsive design"
+    //   ],
+    //   challenges: [
+    //     "Implementing complex payment splitting algorithms",
+    //     "Managing multiple vendor integrations",
+    //     "Ensuring real-time synchronization across services"
+    //   ],
+    //   featured: true
+    // },
   ];
 
   // Filter projects based on selected category
@@ -411,10 +299,10 @@ export default function ProjectsPage() {
               </ul>
             </div>
 
-            <div className="modal-impact">
+            {/* <div className="modal-impact">
               <h3>Project Impact</h3>
               <p className="modal-impact-text">{selectedProject.impact}</p>
-            </div>
+            </div> */}
 
             <div className="modal-actions">
               <a 
