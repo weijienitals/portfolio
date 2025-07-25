@@ -67,7 +67,7 @@ export default function FeaturedProjects() {
       technologies: ["JavaScript", "HTML", "CSS", "Vue.js", "Firebase"],
       category: "Web Development",
       status: "Completed",
-      impact: "Connecting 500+ volunteers with local nonprofits",
+      // impact: "Connecting 500+ volunteers with local nonprofits",
       github: "https://github.com/weijienitals/VolunteerConnect",
      
       image: "/images/volunteer.png",
@@ -92,7 +92,7 @@ export default function FeaturedProjects() {
       technologies: ["Java", "OOP"],
       category: "Game Development",
       status: "Completed",
-      impact: "Demonstrating advanced Java programming skills",
+      // impact: "Demonstrating advanced Java programming skills",
       github: "https://github.com/weijienitals/Parade_Card_Game",
       demo: "#",
       image: "images/parade.png",
@@ -114,7 +114,7 @@ export default function FeaturedProjects() {
       technologies: ["Python", "Vue.js", "Flask", "Docker","Kong"],
       category: "Fullstack Development",
       status: "Completed",
-      impact: "Helping businesses increase revenue by 25%",
+      // impact: "Helping businesses increase revenue by 25%",
       github: "https://github.com/weijienitals/ESD-PROJ",
       demo: "#",
       image: "images/foodordering2.png",
@@ -280,10 +280,10 @@ export default function FeaturedProjects() {
               </ul>
             </div>
 
-            <div className="modal-impact">
+            {/* <div className="modal-impact">
               <h3>Project Impact</h3>
               <p className="modal-impact-text">{selectedProject.impact}</p>
-            </div>
+            </div> */}
 
             <div className="modal-actions">
               <a 
