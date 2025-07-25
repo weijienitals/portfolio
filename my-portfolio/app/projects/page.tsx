@@ -56,7 +56,7 @@ export default function ProjectsPage() {
       technologies: ["JavaScript", "HTML", "CSS", "Next.js", "TypeScript","React","Tailwind CSS"],
       category: "Web Development",
       status: "Completed",
-      github: "https://github.com/weijienitals/VolunteerConnect",
+      github: "https://github.com/weijienitals/portfolio/tree/main/my-portfolio",
       demo: "#",
       image: "/images/portfolio.png",
       features: [
