@@ -69,57 +69,78 @@ export default function Skills() {
       color: "#61dafb",
       level: "Intermediate"
     },
-
+    { 
+      name: "Next.js", 
+      category: "Web Development",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+      color: "#000000",
+      level: "Intermediate"
+    },
+    { 
+      name: "Spring Boot", 
+      category: "Web Development",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
+      color: "#6db33f",
+      level: "Beginner"
+    },
+    
     // Data & Analytics
     { 
       name: "NumPy", 
       category: "Data & Analytics",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg",
       color: "#013243",
-      level: "Advanced"
+      level: "Intermediate"
     },
     { 
       name: "Pandas", 
       category: "Data & Analytics",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg",
       color: "#150458",
-      level: "Advanced"
-    },
-    { 
-      name: "Matplotlib", 
-      category: "Data & Analytics",
-      icon: "https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg",
-      color: "#11557c",
       level: "Intermediate"
     },
     { 
-      name: "Excel", 
+      name: "SQL", 
       category: "Data & Analytics",
-      icon: "https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg",
-      color: "#217346",
-      level: "Advanced"
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+      color: "#4479a1",
+      level: "Intermediate"
     },
-
+    { 
+      name: "Tableau", 
+      category: "Data & Analytics",
+      icon: "https://logos-world.net/wp-content/uploads/2021/10/Tableau-Symbol.png",
+      color: "#e97627",
+      level: "Beginner"
+    },
+    
     // Tools & Platforms
     { 
       name: "Git", 
       category: "Tools & Platforms",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
       color: "#f05032",
-      level: "Advanced"
+      level: "Intermediate"
     },
     { 
       name: "Docker", 
       category: "Tools & Platforms",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
       color: "#2496ed",
-      level: "Intermediate"
+      level: "Beginner"
     },
     { 
       name: "Firebase", 
       category: "Tools & Platforms",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
       color: "#ffca28",
+      level: "Intermediate"
+    },
+    { 
+      name: "Figma", 
+      category: "Tools & Platforms",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+      color: "#f24e1e",
       level: "Intermediate"
     },
     { 
@@ -257,22 +278,21 @@ export default function Skills() {
             style={{ 
               transitionDelay: `${600 + index * 100}ms` 
             }}
+            aria-label={`Filter skills by ${category === 'all' ? 'all categories' : category}`}
+            aria-pressed={selectedCategory === category}
           >
-            {category === 'all' ? (
-              <>
-                <span className="skills-filter-icon">🎯</span>
-                <span className="filter-text">All Skills</span>
-                <span className="skills-filter-count">({skillsData.length})</span>
-              </>
-            ) : (
-              <>
-                <span className="skills-filter-icon">{getCategoryIcon(category)}</span>
-                <span className="filter-text">{category}</span>
-                <span className="skills-filter-count">
-                  ({skillsData.filter(skill => skill.category === category).length})
-                </span>
-              </>
-            )}
+            <span className="skills-filter-icon" aria-hidden="true">
+              {category === 'all' ? '🎯' : getCategoryIcon(category)}
+            </span>
+            <span className="filter-text">
+              {category === 'all' ? 'All Skills' : category}
+            </span>
+            <span 
+              className="skills-filter-count" 
+              aria-label={`${category === 'all' ? skillsData.length : skillsData.filter(skill => skill.category === category).length} skills`}
+            >
+              ({category === 'all' ? skillsData.length : skillsData.filter(skill => skill.category === category).length})
+            </span>
           </button>
         ))}
       </div>
