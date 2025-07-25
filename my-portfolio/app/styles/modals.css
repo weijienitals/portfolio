@@ -321,3 +321,60 @@
       transition-duration: 0.01ms !important;
     }
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* ============================================ */
+/* MINIMAL MODAL CLOSE BUTTON FIX */
+/* ============================================ */
+
+/* Make modal header sticky so close button stays visible */
+.modal-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 10 !important;
+  background: white !important;
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+/* Ensure close button stays in position within sticky header */
+.modal-close-btn {
+  position: absolute !important;
+  top: 1rem !important;
+  right: 1rem !important;
+  z-index: 11 !important;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .modal-close-btn {
+    top: 0.75rem !important;
+    right: 0.75rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-header-content {
+    padding: 1rem !important;
+  }
+  
+  .modal-close-btn {
+    top: 0.5rem !important;
+    right: 0.5rem !important;
+  }
+}
