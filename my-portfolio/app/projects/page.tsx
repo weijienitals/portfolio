@@ -51,50 +51,54 @@ export default function ProjectsPage() {
   const allProjects = [
     {
       title: "Portfolio Website",
-      description: "A comprehensive web platform designed to facilitate volunteerism in Singapore, connecting volunteers with meaningful opportunities.",
-      longDescription: "VolunteerConnect is a full-stack web application that bridges the gap between volunteers and nonprofit organizations in Singapore. The platform features user authentication, advanced search filters, real-time notifications, and an admin dashboard for managing volunteer opportunities.",
-      technologies: ["JavaScript", "HTML", "CSS", "Next.js", "TypeScript","React","Tailwind CSS"],
+      description: "A modern, responsive portfolio website showcasing my full-stack development skills, projects, and professional experience.",
+      longDescription: "A comprehensive personal portfolio built with Next.js and TypeScript, featuring an interactive project showcase, skills visualization, and professional experience timeline. The website demonstrates modern web development practices with smooth animations, responsive design, and optimized performance across all devices.",
+      technologies: ["JavaScript", "HTML", "CSS", "Next.js", "TypeScript", "React", "Tailwind CSS"],
       category: "Web Development",
       status: "Completed",
       github: "https://github.com/weijienitals/portfolio/tree/main/my-portfolio",
-      demo: "#",
+      demo: "https://portfolio-nine-omega-78.vercel.app/#projects",
       image: "/images/portfolio.png",
       features: [
-        "User authentication and profile management",
-        "Advanced search and filtering system",
-        "Real-time messaging between volunteers and organizations",
-        "Event scheduling and calendar integration",
-        "Volunteer hours tracking and certification",
-        "Admin dashboard for organization management"
+        "Responsive design optimized for all device sizes",
+        "Interactive project showcase with detailed modal views",
+        "Animated typing effect and smooth scroll animations",
+        "Skills categorization with filter functionality",
+        "Professional experience timeline and education section",
       ],
       challenges: [
-        "Implementing real-time notifications using Firebase",
-        "Creating responsive design for mobile users",
-        "Optimizing database queries for large datasets"
+        "Implementing smooth animations while maintaining performance",
+        "Creating a responsive design that works across all devices",
+        "Optimizing images and assets for fast loading times",
+        "Building reusable components with TypeScript",
       ],
       featured: true
     },
     {
       title: "LateMate",
-      description: "A digital implementation of the classic Parade card game built with Java, showcasing advanced object-oriented programming principles.",
-      longDescription: "A recreation of the popular Parade card game, featuring Computer opponents, multiplayer functionality, and an intuitive GUI. The project demonstrates essential Java OOP concepts such as encapsulation, inheritance, and modular design.",
-      technologies: ["Java", "OOP", "Design Patterns", "JUnit", "Maven"],
+      description: "A comprehensive UI/UX design project focused on solving user pain points through design thinking methodology and iterative prototyping.",
+      longDescription: "LateMate is a user-centered design project that applies design thinking principles and empathy mapping to understand and address specific user pain points. Through extensive user research, multiple prototype iterations in Figma, and data-driven A/B testing using R, this project demonstrates the complete UX design process from problem identification to solution validation.",
+      technologies: ["Figma", "Design Thinking", "User Research", "A/B Testing", "R Programming", "Prototyping", "Empathy Mapping"],
       category: "UI/UX",
       status: "Completed",
-      github: "https://github.com/weijienitals/Parade_Card_Game",
+      github: "https://github.com/weijienitals/Parade_Card_Game", // Update if you have a different repo for this project
       demo: "https://www.figma.com/proto/f4mIMmDvcGxxJsWiIVYXes/IDP-G7T3?node-id=307-816&starting-point-node-id=307%3A816&t=RDjux8mOG4TGcNAJ-1",
       image: "/images/latemate.png",
       features: [
-        "Complete game logic implementation",
-        "Multiplayer support for up to 6 players",
-        "Score tracking and game statistics",
-        "Intuitive user interface design",
-        "Computer AI opponents with different difficulty levels"
+        "Comprehensive user research and empathy mapping",
+        "Multiple design iterations based on user feedback",
+        "Interactive high-fidelity prototypes in Figma",
+        "Statistical A/B testing analysis using R",
+        "User journey mapping and pain point identification",
+        "Accessibility-focused design considerations",
+        "Data-driven design decisions and validation"
       ],
       challenges: [
-        "Implementing complex game logic and state management",
-        "Writing clean code with OOP principles",
-        "Developing intelligent computer opponents"
+        "Identifying and validating real user pain points through research",
+        "Balancing user needs with technical constraints and business goals",
+        "Conducting effective A/B testing and interpreting statistical results",
+        "Iterating designs based on quantitative and qualitative feedback",
+        "Ensuring accessibility and inclusive design principles"
       ],
       featured: true
     },
