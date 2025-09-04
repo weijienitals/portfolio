@@ -94,7 +94,7 @@ export default function FeaturedProjects() {
       status: "Completed",
       // impact: "Demonstrating advanced Java programming skills",
       github: "https://github.com/weijienitals/Parade_Card_Game",
-      demo: "#",
+      
       image: "images/parade.png",
       features: [
         "Complete game logic implementation",
@@ -116,7 +116,6 @@ export default function FeaturedProjects() {
       status: "Completed",
       // impact: "Helping businesses increase revenue by 25%",
       github: "https://github.com/weijienitals/ESD-PROJ",
-      demo: "#",
       image: "images/foodordering2.png",
       features: [
         "Real-time data processing and visualization",
