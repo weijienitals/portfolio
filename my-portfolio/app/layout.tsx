@@ -68,7 +68,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased dynamic-bg text-white`}
       >
         {children}
-        <Analytics />
+        <Analytics/>
       </body>
     </html>
   );
