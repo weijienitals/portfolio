@@ -102,33 +102,51 @@ export default function ProjectsPage() {
       ],
       featured: true
     },
-    // {
-    //   title: "Food Ordering & Management System",
-    //   period: "Dec 2024 – Feb 2025",
-    //   description: "A comprehensive food ordering and management system enabling multi-vendor ordering, group payment splitting, and vendor order management.",
-    //   longDescription: "Full-stack food ordering platform supporting single and multi-vendor orders with integrated group payment splitting functionality and comprehensive vendor management tools.",
-    //   technologies: ["Python", "Vue.js", "Flask", "Docker", "Kong"],
-    //   category: "Fullstack Development",
-    //   status: "Completed",
-    //   impact: "Helping businesses increase revenue by 25%",
-    //   github: "https://github.com/weijienitals/ESD-PROJ",
-    //   demo: "#",
-    //   image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-    //   features: [
-    //     "Multi-vendor food ordering system",
-    //     "Group payment splitting functionality",
-    //     "Real-time order tracking and updates",
-    //     "Vendor management dashboard",
-    //     "Integration with payment gateways",
-    //     "Mobile-responsive design"
-    //   ],
-    //   challenges: [
-    //     "Implementing complex payment splitting algorithms",
-    //     "Managing multiple vendor integrations",
-    //     "Ensuring real-time synchronization across services"
-    //   ],
-    //   featured: true
-    // },
+    {
+      title: "Airflow Automation Project",
+      period: "Aug 2025 – Nov 2025",
+      description: "Making use of airflow to orchestrate a simple data pipeline to retrieve and load financial market data from youtube",
+      longDescription: "Making use of airflow to orchestrate a simple data pipeline to retrieve and load financial market data from youtube",
+      technologies: ["Python", "MongoDB", "Airflow"],
+      category: "Data Engineering",
+      status: "Completed",
+      github: "https://github.com/weijienitals/apache_airflow_2",
+      demo: "https://youtu.be/0HqiXK3186U",
+      image: "/images/airflow_overview.png",
+      features: [
+        "Calling of youtube api to extract financial market data from youtube",
+        "Automate extraction of data and loading of data into mongoDB",
+      ],
+      challenges: [
+        "Making use of airflow to orchestrate data flow",
+        "Cleaning of retrieved data from youtube",
+      ],
+      featured: true
+    },
+    {
+      title: "Project Smart Meter London",
+      period: "Aug 2025 – Nov 2025",
+      description: "Building of efficient and scalable data pipeline using amazon web services to process smart meter data from kaggle",
+      longDescription: "Building of efficient and scalable data pipeline using amazon web services to process smart meter data from kaggle",
+      technologies: ["Python", "MongoDB", "Airflow","Github Actions","AWS S3","AWS Quicksight","AWS EC2","AWS Athena","AWS EMR"],
+      category: "Data Engineering",
+      status: "Completed",
+      github: "https://github.com/weijienitals/project-smart-meter-london",
+      demo: "https://youtu.be/G_Gi6utk91M",
+      image: "/images/smart_meter_Pipeline.png",
+      features: [
+        "CI/CD pipeline using github actions to automate deployment of airflow dags to aws ec2 instance",
+        "CI/CD pipeline using github actions to automate deployment of data cleaning scripts to S3 bucket",
+        "Airflow to orchestrate data flow from S3 to EMR cluster for data processing",
+
+      ],
+      challenges: [
+        "Creating Scripts to clean raw smart meter data",
+        "Creating of CI/CD pipelines using github actions to automate deployment process",
+        "Visualizing processed data using AWS Quicksight to answer business questions",
+      ],
+      featured: true
+    }
   ];
 
   // Filter projects based on selected category
