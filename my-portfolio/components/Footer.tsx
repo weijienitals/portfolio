@@ -41,10 +41,10 @@ export default function Footer() {
               Chean Wei Jie
             </h3>
             <a 
-              href="/Chean_Wei_Jie_Resume.pdf" 
+              href="/latest_resume.pdf" 
               target="_blank"
               rel="noopener noreferrer"
-              download="Chean_Wei_Jie_Resume.pdf" 
+              download="latest_resume.pdf" 
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -252,7 +252,7 @@ export default function Footer() {
               Built with ❤️ Next.js
             </p>
             <a 
-              href="/Chean_Wei_Jie_Resume.pdf" 
+              href="/latest_resume.pdf" 
               target="_blank"
               rel="noopener noreferrer"
               style={{
