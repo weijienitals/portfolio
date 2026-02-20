@@ -52,8 +52,14 @@ export default function Experience() {
       responsibilities: [
         "Developed REST API services using Java Spring and Maven for efficient backend operations",
         "Delivered web scraping solutions to obtain e-commerce product listings using Java",
+        "Created Data pipelines and ETL jobs using amazon S3, glue and spark",
+        "Cleaned and processed data using python and created visualizations using tableau",
+        "Derived strategies for company’s ecommerce business using processed data",
         "Researched and developed impactful technology solutions for Islamic finance practices",
+        "Implemented OCR workflows using Gemini with customized prompts to extract and validate data from uploaded documents.",
         "Collaborated with cross-functional teams to implement scalable software solutions",
+
+       
       ],
       technologies: [
         "Java",
@@ -61,6 +67,9 @@ export default function Experience() {
         "Maven",
         "REST APIs",
         "Web Scraping",
+        "AWS S3",
+        `AWS Glue`,
+        "tableau",
       ],
       achievements: [
         "Successfully implemented scalable API architecture",
@@ -69,7 +78,7 @@ export default function Experience() {
       ],
     },
     {
-      title: "Teaching Assistant",
+      title: "Data Management Teaching Assistant",
       company: "Singapore Management University",
       course: "IS112 Data Management",
       period: "Jan 2025 – Apr 2025",
