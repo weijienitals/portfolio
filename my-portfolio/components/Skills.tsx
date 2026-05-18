@@ -113,6 +113,13 @@ export default function Skills() {
       color: "#e97627",
       level: "Beginner"
     },
+    { 
+     name: "Excel", 
+     category: "Data & Analytics",
+     icon: "https://img.icons8.com/color/96/microsoft-excel-2019.png",
+     color: "#217346",
+     level: "Beginner"
+   },
     
     // Tools & Platforms
     { 
@@ -150,6 +157,7 @@ export default function Skills() {
       color: "#0078d4",
       level: "Beginner"
     }
+
   ], []);
 
   const categories = useMemo(() => [

@@ -146,6 +146,61 @@ export default function ProjectsPage() {
         "Visualizing processed data using AWS Quicksight to answer business questions",
       ],
       featured: true
+    },
+
+    // {
+    //   title: "Project Smart Meter London",
+    //   period: "Aug 2025 – Nov 2025",
+    //   description: "Building of efficient and scalable data pipeline using amazon web services to process smart meter data from kaggle",
+    //   longDescription: "Building of efficient and scalable data pipeline using amazon web services to process smart meter data from kaggle",
+    //   technologies: ["Python", "MongoDB", "Airflow","Github Actions","AWS S3","AWS Quicksight","AWS EC2","AWS Athena","AWS EMR"],
+    //   category: "Data Science",
+    //   status: "Completed",
+    //   github: "https://github.com/weijienitals/project-smart-meter-london",
+    //   demo: "https://youtu.be/G_Gi6utk91M",
+    //   image: "/images/smart_meter_Pipeline.png",
+    //   features: [
+    //     "CI/CD pipeline using github actions to automate deployment of airflow dags to aws ec2 instance",
+    //     "CI/CD pipeline using github actions to automate deployment of data cleaning scripts to S3 bucket",
+    //     "Airflow to orchestrate data flow from S3 to EMR cluster for data processing",
+
+    //   ],
+    //   challenges: [
+    //     "Creating Scripts to clean raw smart meter data",
+    //     "Creating of CI/CD pipelines using github actions to automate deployment process",
+    //     "Visualizing processed data using AWS Quicksight to answer business questions",
+    //   ],
+    //   featured: true
+    // },
+    {
+      title: "Urban Vertical Farming Optimisation",
+      period: "Jan 2026 – Apr 2026",
+      description: "Built an Excel-based decision model to optimise crop mix and lighting schedules for a Singapore vertical farm, maximising net profit while managing energy costs under Time-of-Use tariffs.",
+      longDescription: "Developed for COR1305 – Modelling & Data Analytics, this project addresses Singapore's food security goal of producing 20% of nutritional fibre needs by 2035 via vertical farming. LED lighting accounts for up to 40% of operating costs, and Time-of-Use (TOU) electricity tariffs make scheduling critical. Using Microsoft Excel, we built a two-module decision tool: an LP Simplex optimisation model to allocate shelf space across five crops (Romaine Lettuce, Bok Choy, Kale, Kai Lan, Chye Sim) to maximise yearly net profit, and a 1,000-iteration Monte Carlo simulation to stress-test the optimal plan under crop price and tariff volatility. The model achieved a monthly net profit of S$260,364 with P(profit > 0) = 100% across all simulated scenarios.",
+      technologies: ["Microsoft Excel"],
+      category: "Data Analytics",
+      status: "Completed",
+      github: "/Spreadsheet%20Modelling%20Group%207.xlsm",
+      isDownload: true,
+      downloadName: "Spreadsheet Modelling Group 7.xlsm",
+      demo: "https://canva.link/zqgysfz6izwm8ic",
+      image: "https://images.unsplash.com/photo-1623251963103-511f665a9782?w=800&q=80&auto=format&fit=crop",
+      animatedImage: true,
+      features: [
+        "LP Simplex optimisation model to maximise yearly net profit across 5 crops over 1,000 m² of shelf space",
+        "Time-of-Use tariff scheduling to shift photoperiods to off-peak hours, minimising electricity costs",
+        "1,000-iteration Monte Carlo simulation to quantify downside risk under crop price and tariff volatility",
+        "Sensitivity analysis using LP shadow prices to identify the most binding constraints",
+        "Interactive model dashboard with user-configurable inputs that trigger the Solver automatically",
+        "VaR(5%) = S$247,923 and P(profit > 0) = 100% across all simulated scenarios"
+      ],
+      challenges: [
+        "Sourcing yield, price, and photoperiod data for crops with no direct hydroponic benchmarks — required biological and market proxies",
+        "Modelling Time-of-Use tariff blending accurately based on each crop's photoperiod window",
+        "Ensuring the LP formulation remained feasible under SFA mandate constraints while maximising profit",
+        "Calibrating lognormal price distributions and normal tariff distributions from SingStat historical data"
+      ],
+      featured: true
     }
   ];
 
@@ -170,8 +225,11 @@ export default function ProjectsPage() {
       'Game Development': '🎮',
       'Machine Learning': '🤖',
       'Data Analytics': '📊',
+      'Data Engineering': '⚙️',
+      'Data Science': '🔬',
       'IoT Development': '🏠',
-      'Fullstack Development': '💻'
+      'Fullstack Development': '💻',
+      'UI/UX': '🎨'
     };
     return iconMap[category] || '💻';
   };
@@ -195,10 +253,10 @@ export default function ProjectsPage() {
     >
       {/* Image Container - Same as Featured Projects */}
       <div className="featured-project-image-container">
-        <img 
-          src={project.image} 
+        <img
+          src={project.image}
           alt={`${project.title} preview`}
-          className="featured-project-image"
+          className={`featured-project-image${project.animatedImage ? ' animated-farm-image' : ''}`}
         />
         
         {/* Hover Overlay */}
@@ -338,17 +396,30 @@ export default function ProjectsPage() {
                 </svg>
                 View Demo
               </a>
-              <a 
-                href={selectedProject.github} 
-                className="modal-btn modal-btn-secondary"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-                View Code
-              </a>
+              {selectedProject.isDownload ? (
+                <a
+                  href={selectedProject.github}
+                  download={selectedProject.downloadName || true}
+                  className="modal-btn modal-btn-secondary"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  Download Excel
+                </a>
+              ) : (
+                <a
+                  href={selectedProject.github}
+                  className="modal-btn modal-btn-secondary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  View Code
+                </a>
+              )}
             </div>
           </div>
         </div>
