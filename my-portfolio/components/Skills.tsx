@@ -150,10 +150,17 @@ export default function Skills() {
       color: "#f24e1e",
       level: "Intermediate"
     },
-    { 
-      name: "Azure", 
+    {
+      name: "Azure",
       category: "Tools & Platforms",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
+      color: "#0078d4",
+      level: "Beginner"
+    },
+    {
+      name: "Microsoft Fabric",
+      category: "Tools & Platforms",
+      icon: "https://cdn.jsdelivr.net/npm/@fabric-msft/svg-icons@latest/svg/fabric_48_color.svg",
       color: "#0078d4",
       level: "Beginner"
     }

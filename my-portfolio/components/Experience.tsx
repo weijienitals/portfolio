@@ -12,34 +12,59 @@ export default function Experience() {
   ];
 
   const workExperiences = [
+ {
+      title: "Data Scientist",
+      company: "Seagate Technology",
+      period: "Jun 2026 – Dec 2026",
+      type: "Internship",
+      description:
+        "To be included closer to the internship's conclusion",
+      responsibilities: [
+        "Processed and analysed large-scale manufacturing process datasets to identify operational faults and anomalies",
+        "Built AI models to automate fault detection across manufacturing processes, improving defect identification accuracy",
+      ],
+      technologies: [
+        "Python",
+        "SQL",
+        "Hadoop",
+      ],
+      achievements: [
+        "To be included closer to the internship's conclusion",
+      ],
+    },
+
     {
       title: "Data Engineer",
       company: "SATS",
       period: "Dec 2025 – May 2026",
       type: "Internship",
       description:
-        "Contributed to the development and maintenance of data engineering solutions within cloud-based environments, focusing on ETL processes and data integration.",
+        "Engineered end-to-end data solutions across three high-impact projects spanning real-time equipment tracking, large-scale cloud data migration, and an LLM-powered airport operations knowledge agent.",
       responsibilities: [
-        "Assisted in designing, developing, and maintaining ETL pipelines",
-        "Supported data integration from various sources into cloud-based data platforms.",
-        "Worked with SQL and Python to clean, transform, and analyse data.",
-        "Participated in data platform and data management framework design and implementation",
-        "Collaborated with cross-functional teams to understand data requirements and deliver solutions",
-        "Utilised Azure tools and services to deploy and monitor data workflows",
-        "Implemented data management, processing, and analytics tools on Databricks",
-        "Documented processes and contributed to knowledge-sharing within the team.",
+        "Collaborated with full-time engineers to build a real-time data pipeline on Python and Azure for ground staff airport equipment tracking",
+        "Engineered scalable ETL pipelines on Microsoft Fabric to migrate operational data from a legacy Oracle database",
+        "Processed high-volume datasets using PySpark notebooks for distributed data transformation on Fabric",
+        "Built an OCR pipeline to convert hardcopy airport manuals into structured Markdown files",
+        "Developed a RAG pipeline covering document chunking, embedding generation, and vector database ingestion",
+        "Built an MCP server with semantic search, integrated with an LLM agent to handle natural language airport operations queries",
       ],
       technologies: [
         "Python",
-        "Databricks",
         "Azure",
-        "SQL",
+        "Microsoft Fabric",
+        "PySpark",
         "ETL Pipelines",
-        "Data Integration",
-        "Data Management",
+        "Oracle DB",
+        "OCR",
+        "RAG",
+        "Vector Database",
+        "MCP Server",
+        "LLM",
       ],
       achievements: [
-        "To be included closer to the internship's conclusion",
+        "Delivered a production-ready equipment tracking pipeline, improving ground staff operational efficiency",
+        "Modernised legacy Oracle infrastructure with a scalable cloud migration to Microsoft Fabric using PySpark",
+        "Architected a full-stack RAG system enabling an LLM agent to accurately answer airport operations queries",
       ],
     },
     {

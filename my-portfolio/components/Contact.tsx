@@ -216,7 +216,7 @@ const ContactSection = () => {
             className="text-sm"
             style={{ color: "var(--color-text-secondary)" }}
           >
-             5 May 2026 – 30 December 2026
+             15 June 2026 – 30 December 2027
           </p>
         </div>
       </div>
